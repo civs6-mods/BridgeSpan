@@ -1,16 +1,10 @@
--- Run after technology-tree mods. In HD, Arch unlocks masonry bridges in
--- the same era as Canal. Otherwise follow Canal's final prerequisite.
+-- Run after technology-tree mods. Vanilla Engineering unlocks the stone
+-- bridge; Harmony in Diversity uses its dedicated Arch technology.
 UPDATE Districts
 SET PrereqTech = CASE
-    WHEN EXISTS (
-        SELECT 1
-        FROM Technologies AS arch
-        JOIN Districts AS canal ON canal.DistrictType = 'DISTRICT_CANAL'
-        JOIN Technologies AS canalTech ON canalTech.TechnologyType = canal.PrereqTech
-        WHERE arch.TechnologyType = 'TECH_ARCH_HD'
-          AND arch.EraType = canalTech.EraType
-    ) THEN 'TECH_ARCH_HD'
-    ELSE (SELECT PrereqTech FROM Districts WHERE DistrictType = 'DISTRICT_CANAL')
+    WHEN EXISTS (SELECT 1 FROM Technologies WHERE TechnologyType = 'TECH_ARCH_HD')
+        THEN 'TECH_ARCH_HD'
+    ELSE 'TECH_ENGINEERING'
 END,
 PrereqCivic = NULL
 WHERE DistrictType = 'DISTRICT_BS_BRIDGE_1';

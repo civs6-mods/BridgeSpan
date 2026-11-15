@@ -1,20 +1,43 @@
 # BridgeSpan — Build Your Own Bridges
 
-Build bridges over coast and lake tiles in Civilization VI. Land units and traders cross between the shores, while ships can pass through the water tiles below.
+[简体中文](README.md) · **English** · [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) · [Development & packaging](docs/DEVELOPMENT.md)
 
-[中文](README.md) · [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) · [Development](docs/DEVELOPMENT.md)
+Build bridges across coast and lake tiles in Civilization VI. Land units and traders cross between the shores, while ships can pass through the water tiles below.
 
-Version **40** matches the verified Workshop download. The Workshop item is currently private.
+![BridgeSpan](workshop/preview.jpg)
 
-Features include one-tile stone bridges and two-/three-tile sea bridges, city production, multiple bridges per city, end-only land access, and numbered layout choices with A/B shore previews. Eligible feature and improvement removal is shown before construction; cancelling leaves them intact.
+## Current release
 
-For Windows Steam, Gathering Storm, single-player. Compatible with Harmony in Diversity. See [verification scope](docs/VERIFICATION.md) for DX11/DX12 coverage.
+**v41 is publicly available.** [Subscribe on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919). The repository's `mod/` matches the verified v41 release package.
 
-Once the Workshop item is public, subscribe and enable it in Additional Content. For manual installation, exit the game and copy `mod/` as `BridgeSpan` into your Civilization VI `Mods` directory, then enable it. Use either the local copy or the Workshop subscription, since both share the same mod ID. No external launcher is required.
+- One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
+- Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
+- Multiple valid layouts use numbered options with bridge and A/B shore previews; a single valid layout goes straight to confirmation.
+- Eligible feature and improvement removal is shown before construction. Cancelling leaves them intact.
+- Supports the Windows Steam edition of Civilization VI, Gathering Storm, single-player, including Harmony in Diversity. See the [verification record](docs/VERIFICATION.md) for DX11/DX12 coverage.
 
-Stone bridges require Steam Power (Arch with Harmony in Diversity); sea bridges require Steel. Both also require Shipbuilding. Select a bridge in city production, choose a water tile, and confirm its layout, cost and removal warnings. Every bridge water tile must belong to the same city. Keep the mod enabled in saves containing its bridges.
+## Installation & use
 
-`mod/` contains the full installable package and editable Lua/SQL/UI files. `native/` contains native sources and build tools. `tests/` contains offline regression tests; `workshop/` contains bilingual page copy and images.
+Subscribe on Steam Workshop, wait for the download to finish, and enable BridgeSpan in Additional Content. No external launcher is required.
+
+For manual installation, exit the game and copy the repository's `mod` folder into `Documents/My Games/Sid Meier's Civilization VI/Mods`, naming the copied folder `BridgeSpan`, then enable it. Use one installation method: the local copy and Workshop subscription share the same mod ID.
+
+Stone bridges require **Engineering** in the standard technology tree, or **Arch** with Harmony in Diversity. Sea bridges require **Steel**. Both types also require **Shipbuilding**. Select a bridge in city production, choose a valid water tile, and confirm the layout, cost and removal warnings.
+
+The bridge must cross consecutive coast or lake tiles belonging to the same production city, with usable land at both ends. Bridge tiles cannot contain resources or other districts. Keep BridgeSpan enabled in saves containing its bridges.
+
+## Repository layout
+
+| Path | Contents |
+| --- | --- |
+| `mod/` | Complete v41 installable package: Lua, SQL, UI, compiled art and native module |
+| `native/` | Native C/C++ sources, MinHook sources and build entry point |
+| `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
+| `scripts/` | Package verification, offline tests and ZIP packaging |
+| `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
+| `release-manifest.json` | SHA-256 hashes for the 72 v41 release files |
+
+Quick verification and packaging:
 
 ```sh
 python scripts/verify.py
@@ -23,6 +46,16 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v40.zip`. See [development instructions](docs/DEVELOPMENT.md) for native builds.
+The ZIP is written to `dist/BridgeSpan-v41.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
-MIT licensed, with separate MinHook notices. No original game DLL is redistributed.
+## Contributing
+
+Use [Issues](https://github.com/civs6-mods/BridgeSpan/issues) for bug reports and feature suggestions. Pull requests for translations, testing, Lua / UI development, and bridge models or art are welcome.
+
+Read the [development and packaging guide](docs/DEVELOPMENT.md) before starting. For reports, include the game version, ruleset, enabled mods, bridge screenshots and reproduction steps; a save from before the issue is especially useful. For pull requests, explain the purpose of the change and how it was verified, including the results.
+
+## Feedback & license
+
+For bug reports, include screenshots, reproduction steps and enabled mods. A save from before the issue helps.
+
+Project code is [MIT licensed](LICENSE). MinHook retains its own license and attribution; see [third-party notices](native/THIRD_PARTY_NOTICES.txt). No original game DLL is redistributed; the native module loads the locally installed game at runtime.

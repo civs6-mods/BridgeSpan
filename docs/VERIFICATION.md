@@ -1,3 +1,9 @@
+# v41 验收范围 / Verification scope
+
+2026-11-15：v41 已公开。原版石桥解锁改为“工程”，《和而不同》保留“拱券”；造船术要求和跨海大桥钢铁解锁不变。三个 SQLite 科技树用例通过，真实 Steam 下载的全部 72 个文件与发布清单一致。此版本没有新增游戏内实测；其余玩法、资源和原生 DLL 沿用 v40 的验收范围。
+
+Public v41 changes the standard stone-bridge unlock to Engineering; Harmony in Diversity retains Arch. Shipbuilding remains required and sea bridges still unlock at Steel. Three SQLite technology-tree cases passed, and all 72 actual Steam-downloaded files matched the release manifest. No new live gameplay test was performed for v41; prior v40 gameplay, art and native-module coverage still applies.
+
 # v40 验收范围
 
 2026-11-15，v40 工坊上传及真实订阅下载完成。72 个文件、91,773,893 字节与发布清单一致，服务端中英文说明回读一致。v40 仅修改简介和工坊文案，71 个玩法及资源文件与已验收 v39 相同。

@@ -1,5 +1,5 @@
 {
-  "version": 40,
+  "version": 41,
   "files": {
     "ArtDefs/Buildings.artdef": "884891c17cd4124b04f69c8e783a210b8c628fd7761459d4c44ade957796e363",
     "ArtDefs/Districts.artdef": "d845c3a3e02f3b6c4d50115ba871d29f35f24162c0e9ec1bcde7f81c2ada3cfa",
@@ -7,7 +7,7 @@
     "ArtDefs/WonderMovie.artdef": "ffa1d64c9db80e702c0311b3c750323860eb929cc4a6d16138e327ea63cd0b40",
     "Binaries/Win64/GameCore_XP2_BridgeSpan_FinalRelease.dll": "eaa17840f5a740799c07822440817f5339599c438751abd39daeff0286b25361",
     "BridgeSpan.dep": "6c09968f3203ed88ef43d7fd141360935244c7f7408aefaef445fe11c747a0bb",
-    "BridgeSpan.modinfo": "8aaa2fae3c9a340df673f2fe7301f47e32af489ad0ab363db0e9f58094fdbf60",
+    "BridgeSpan.modinfo": "9bac4224c5fe1c843fb7d48e067eaaceec4c9db42846c21703bad98ada9fd8af",
     "BridgeSpan_DistrictCommon.lua": "db5025c99ac92b0f2d780c9c98ed31747d00027e096f469be14567c4dfc7dfec",
     "BridgeSpan_DistrictGameplay.lua": "4ab90580c5ccb19ae196eb8741999878087a3f306184417c006487b19c31427a",
     "BridgeSpan_HealthMonitor.lua": "c7e6d90b9decce4731f4fc775754053e22b0e6dcf747314796f12a8f2bceb7b1",
@@ -69,7 +69,7 @@
     "Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5": "a1c755480a0f0e19526710796daf8c8d36aa2b74c418832fa5f2155d617176bc",
     "ProductionPanel_BridgeSpan.lua": "d3b4879db40f42386aa8886cdb8c69401768478d9f0055619eb79e46e2c73d59",
     "Text.xml": "90b99ba2ebf474a45e9d84130114c21f038c8024ef6e939cae3baa4f0ff45725",
-    "Unlock.sql": "a78a96f7da087b0d52d3bffd9c82f8950e587f412656e870ead497a5f2c74058",
+    "Unlock.sql": "4fb6ed21869a5d17b70ae693abd5e489ea3ca905dc97abe7c87797362dc27b0a",
     "WorksiteIcons.sql": "bb73d54ead2ec94c4e29f21961175cc7eafa419e8710be59a2c6c993345a2ef6",
     "Worksites.sql": "ffdfb62de5e11e1e96bcf9307f7b126b09c80a74349f5aa9ccb4fb5f6adf1ea8",
     "WorldInput_BridgeSpan.lua": "12fcf56f892a6dace4c0cb26a578d8db87cc55bb1a4a85e5b0e7d5ceb7f2e8b2"
