@@ -1,0 +1,8 @@
+{
+  "name": "bridgespan-tests",
+  "version": "40.0.0",
+  "private": true,
+  "description": "Offline Lua regression runner for BridgeSpan",
+  "license": "MIT",
+  "devDependencies": { "fengari-node-cli": "0.1.0" }
+}

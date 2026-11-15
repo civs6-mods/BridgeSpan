@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="BridgeSpan_HealthUI">
+  <Container ID="UpdateAnchor" Anchor="L,T" Size="1,1" ConsumeMouse="0"/>
+</Context>

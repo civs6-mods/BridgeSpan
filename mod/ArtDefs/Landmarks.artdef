@@ -1,0 +1,3121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects..ArtDefSet>
+  <m_Version>
+    <major>4</major>
+    <minor>0</minor>
+    <build>419</build>
+    <revision>755</revision>
+  </m_Version>
+  <m_TemplateName text="Landmarks" />
+  <m_RootCollections>
+    <Element>
+      <m_CollectionName text="Districts" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="PROP_Scaffold_A" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="tilebases.xlp" />
+                    <m_BLPPackage text="landmarks/tilebases" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="PROP_Scaffold_A" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="tilebases.xlp" />
+                    <m_BLPPackage text="landmarks/tilebases" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="PROP_Scaffold_A" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="tilebases.xlp" />
+                    <m_BLPPackage text="landmarks/tilebases" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="TB_EMPTY_TILEBASE" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="tilebases.xlp" />
+                    <m_BLPPackage text="landmarks/tilebases" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_SUPPORT_2" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="TB_EMPTY_TILEBASE" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="tilebases.xlp" />
+                    <m_BLPPackage text="landmarks/tilebases" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_SUPPORT_3" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_0" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D0" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_1" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D1" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_2" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D2" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_3" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D3" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_4" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D4" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_1_5" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_1_D5" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_0" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D0" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_1" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D1" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_2" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D2" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_3" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D3" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_4" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D4" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_2_5" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_2_D5" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_0" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D0" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_1" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D1" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_2" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D2" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_3" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D3" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_4" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D4" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..ArtDefReferenceValue">
+              <m_ElementName text="Gen_GenericDistrict" />
+              <m_RootCollectionName text="Generator" />
+              <m_ArtDefPath text="CityGenerators.artdef" />
+              <m_CollectionIsLocked>true</m_CollectionIsLocked>
+              <m_TemplateName text="CityGenerators" />
+              <m_ParamName text="DistrictGenerator" />
+            </Element>
+            <Element class="AssetObjects..RGBValue">
+              <m_r>255.000000</m_r>
+              <m_g>255.000000</m_g>
+              <m_b>255.000000</m_b>
+              <m_ParamName text="TintColor" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="DistrictDamagePillagesBuildings" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="IsAlignedToCoast" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="bUseCityScale" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>false</m_bValue>
+              <m_ParamName text="FlattenTerrain" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="NONE" />
+              <m_ParamName text="ProceduralPlacementMode" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections>
+          <Element>
+            <m_CollectionName text="BaseVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="EMPTY" />
+                    <m_RootCollectionName text="BuildingSets" />
+                    <m_ArtDefPath text="Landmarks.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Set_HeroBuildings" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="ArtEra" />
+                    <m_ArtDefPath text="Eras.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Era" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="DEFAULT" />
+                    <m_RootCollectionName text="Culture" />
+                    <m_ArtDefPath text="Cultures.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Culture" />
+                  </Element>
+                  <Element class="AssetObjects..BLPEntryValue">
+                    <m_EntryName text="BS_ALIGNEDWORKSITE_3_5" />
+                    <m_XLPClass text="TileBase" />
+                    <m_XLPPath text="BS_AlignedWorksites.xlp" />
+                    <m_BLPPackage text="BS_AlignedWorksites" />
+                    <m_LibraryName text="TileBase" />
+                    <m_ParamName text="Asset" />
+                  </Element>
+                  <Element class="AssetObjects..ArtDefReferenceValue">
+                    <m_ElementName text="ANY" />
+                    <m_RootCollectionName text="AppealTags" />
+                    <m_ArtDefPath text="Appeal.artdef" />
+                    <m_CollectionIsLocked>true</m_CollectionIsLocked>
+                    <m_TemplateName text="" />
+                    <m_ParamName text="Tag_Appeal" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="" />
+                    <m_ParamName text="SelectionRule" />
+                  </Element>
+                  <Element class="AssetObjects..IntValue">
+                    <m_nValue>0</m_nValue>
+                    <m_ParamName text="Priority" />
+                  </Element>
+                  <Element class="AssetObjects..StringValue">
+                    <m_Value text="INHERIT" />
+                    <m_ParamName text="Placement" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="BaseVariants001" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingSets" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+            <Element>
+              <m_Fields>
+                <m_Values>
+                  <Element class="AssetObjects..CollectionValue">
+                    <m_eObjectType>INVALID</m_eObjectType>
+                    <m_eValueType>ARTDEF_REF</m_eValueType>
+                    <m_Values />
+                    <m_ParamName text="Set" />
+                  </Element>
+                </m_Values>
+              </m_Fields>
+              <m_ChildCollections />
+              <m_Name text="EMPTY" />
+              <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+            </Element>
+          </Element>
+          <Element>
+            <m_CollectionName text="BuildingVariants" />
+            <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+          </Element>
+        </m_ChildCollections>
+        <m_Name text="DISTRICT_BS_BRIDGE_3_D5" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+    </Element>
+    <Element>
+      <m_CollectionName text="Landmarks" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+    </Element>
+    <Element>
+      <m_CollectionName text="ResourceTags" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+    </Element>
+    <Element>
+      <m_CollectionName text="Globals" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+      <Element>
+        <m_Fields>
+          <m_Values>
+            <Element class="AssetObjects..BLPEntryValue">
+              <m_EntryName text="TP_ERROR_SMALL" />
+              <m_XLPClass text="TileBase" />
+              <m_XLPPath text="tilebases.xlp" />
+              <m_BLPPackage text="landmarks/tilebases" />
+              <m_LibraryName text="TileBase" />
+              <m_ParamName text="Asset_SubAttachmentBaseError" />
+            </Element>
+            <Element class="AssetObjects..FloatValue">
+              <m_fValue>1.000000</m_fValue>
+              <m_ParamName text="Var_CityScale" />
+            </Element>
+            <Element class="AssetObjects..BLPEntryValue">
+              <m_EntryName text="TB_ERROR" />
+              <m_XLPClass text="TileBase" />
+              <m_XLPPath text="tilebases.xlp" />
+              <m_BLPPackage text="landmarks/tilebases" />
+              <m_LibraryName text="TileBase" />
+              <m_ParamName text="Asset_AttachmentBaseError" />
+            </Element>
+            <Element class="AssetObjects..BLPEntryValue">
+              <m_EntryName text="HB_ERROR" />
+              <m_XLPClass text="TileBase" />
+              <m_XLPPath text="hero_buildings.xlp" />
+              <m_BLPPackage text="landmarks/hero_buildings" />
+              <m_LibraryName text="TileBase" />
+              <m_ParamName text="Asset_HeroBuildingError" />
+            </Element>
+            <Element class="AssetObjects..BoolValue">
+              <m_bValue>true</m_bValue>
+              <m_ParamName text="Var_IgnoreUnknownBuildings" />
+            </Element>
+            <Element class="AssetObjects..FloatValue">
+              <m_fValue>0.300000</m_fValue>
+              <m_ParamName text="Var_TerrainFlattening" />
+            </Element>
+            <Element class="AssetObjects..FloatValue">
+              <m_fValue>10.000000</m_fValue>
+              <m_ParamName text="Var_BuildingStateInfluenceRange" />
+            </Element>
+            <Element class="AssetObjects..StringValue">
+              <m_Value text="" />
+              <m_ParamName text="THIS SPACE INTENTIONALLY LEFT BLANK" />
+            </Element>
+          </m_Values>
+        </m_Fields>
+        <m_ChildCollections />
+        <m_Name text="CITY_GLOBALS" />
+        <m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
+      </Element>
+    </Element>
+    <Element>
+      <m_CollectionName text="TerrainTags" />
+      <m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
+    </Element>
+  </m_RootCollections>
+</AssetObjects..ArtDefSet>

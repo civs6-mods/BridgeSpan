@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="40">
+  <Properties>
+    <Name>BridgeSpan 自由造桥 | Build Your Own Bridges</Name>
+    <Description>建造1格石桥和2至3格跨海大桥。陆军与商人仅从两端上下桥，船可穿过桥下。订阅后在“额外内容”中启用即可。适用于 Windows Steam《风云变幻》单人游戏，支持与《和而不同》搭配使用。</Description>
+    <Authors>xuanda0201</Authors>
+    <AffectsSavedGames>1</AffectsSavedGames>
+    <CompatibleVersions>2.0</CompatibleVersions>
+    <SupportsSinglePlayer>1</SupportsSinglePlayer>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="GS">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+  </ActionCriteria>
+  <InGameActions>
+    <UpdateDatabase id="BS_Data" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>Districts.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="BS_Unlock" criteria="GS">
+      <Properties>
+        <LoadOrder>2000000</LoadOrder>
+      </Properties>
+      <File>Unlock.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="BS_Text" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>Text.xml</File>
+    </UpdateText>
+    <UpdateIcons id="BS_Icons" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>Icons.sql</File>
+    </UpdateIcons>
+    <UpdateArt id="BS_Art" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan.dep</File>
+    </UpdateArt>
+    <AddGameplayScripts id="BS_Gameplay" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan_DistrictGameplay.lua</File>
+    </AddGameplayScripts>
+    <ImportFiles id="BS_Lua" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan_DistrictCommon.lua</File>
+      <File>WorldInput_BridgeSpan.lua</File>
+      <File>ProductionPanel_BridgeSpan.lua</File>
+      <File>BS_BridgeDistricts22.dds</File>
+      <File>BS_BridgeDistricts32.dds</File>
+      <File>BS_BridgeDistricts38.dds</File>
+      <File>BS_BridgeDistricts50.dds</File>
+      <File>BS_BridgeDistricts80.dds</File>
+      <File>BS_BridgeDistricts128.dds</File>
+      <File>BS_BridgeDistricts256.dds</File>
+    </ImportFiles>
+    <ReplaceUIScript id="BS_WorldInput" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+        <LuaContext>WorldInput</LuaContext>
+        <LuaReplace>WorldInput_BridgeSpan.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_ProductionPanel" criteria="GS">
+      <Properties>
+        <LoadOrder>160000</LoadOrder>
+        <LuaContext>ProductionPanel</LuaContext>
+        <LuaReplace>ProductionPanel_BridgeSpan.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <UpdateDatabase id="BS_Worksites" criteria="GS">
+      <Properties>
+        <LoadOrder>2000001</LoadOrder>
+      </Properties>
+      <File>Worksites.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="BS_WorksiteIcons" criteria="GS">
+      <Properties>
+        <LoadOrder>40001</LoadOrder>
+      </Properties>
+      <File>WorksiteIcons.sql</File>
+    </UpdateIcons>
+    <AddGameplayScripts id="BS_HealthMonitor" criteria="GS">
+      <Properties>
+        <LoadOrder>40000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan_HealthMonitor.lua</File>
+    </AddGameplayScripts>
+    <AddUserInterfaces id="BS_HealthUI" criteria="GS">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>41000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan_HealthUI.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="BS_HealthUIFiles" criteria="GS">
+      <File>BridgeSpan_HealthUI.lua</File>
+    </ImportFiles>
+    <UpdateText id="BS_HealthText">
+      <File>HealthText.xml</File>
+    </UpdateText>
+    <AddUserInterfaces id="BS_PlacementPicker" criteria="GS">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>41000</LoadOrder>
+      </Properties>
+      <File>BridgeSpan_PlacementPicker.xml</File>
+    </AddUserInterfaces>
+    <ImportFiles id="BS_PlacementPickerFiles" criteria="GS">
+      <File>BridgeSpan_PlacementPicker.lua</File>
+    </ImportFiles>
+  </InGameActions>
+  <Files>
+    <File>ArtDefs/Buildings.artdef</File>
+    <File>ArtDefs/Districts.artdef</File>
+    <File>ArtDefs/Landmarks.artdef</File>
+    <File>ArtDefs/WonderMovie.artdef</File>
+    <File>BridgeSpan.dep</File>
+    <File>BridgeSpan_DistrictCommon.lua</File>
+    <File>BridgeSpan_DistrictGameplay.lua</File>
+    <File>BS_BridgeDistricts128.dds</File>
+    <File>BS_BridgeDistricts22.dds</File>
+    <File>BS_BridgeDistricts256.dds</File>
+    <File>BS_BridgeDistricts32.dds</File>
+    <File>BS_BridgeDistricts38.dds</File>
+    <File>BS_BridgeDistricts50.dds</File>
+    <File>BS_BridgeDistricts80.dds</File>
+    <File>Districts.sql</File>
+    <File>Icons.sql</File>
+    <File>LICENSE.txt</File>
+    <File>Platforms/Windows/BLPs/BS_RegionalWorld.blp</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_A</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_A</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_AO</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_1_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_2_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_3_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
+    <File>ProductionPanel_BridgeSpan.lua</File>
+    <File>Text.xml</File>
+    <File>Unlock.sql</File>
+    <File>WorldInput_BridgeSpan.lua</File>
+    <File>Platforms/Windows/BLPs/BS_AlignedWorksites.blp</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_BaseColor</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_1_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_2_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_3_D_null</File>
+    <File>Worksites.sql</File>
+    <File>WorksiteIcons.sql</File>
+    <File>CoreConfig.sql</File>
+    <File>Binaries/Win64/GameCore_XP2_BridgeSpan_FinalRelease.dll</File>
+    <File>Core-THIRD_PARTY_NOTICES.txt</File>
+    <File>Core-MINHOOK-LICENSE.txt</File>
+    <File>BridgeSpan_HealthMonitor.lua</File>
+    <File>BridgeSpan_HealthUI.lua</File>
+    <File>BridgeSpan_HealthUI.xml</File>
+    <File>HealthText.xml</File>
+    <File>BridgeSpan_PlacementPicker.lua</File>
+    <File>BridgeSpan_PlacementPicker.xml</File>
+  </Files>
+  <FrontEndActions>
+    <UpdateDatabase id="BS_CoreConfig">
+      <Properties>
+        <LoadOrder>100</LoadOrder>
+      </Properties>
+      <File>CoreConfig.sql</File>
+    </UpdateDatabase>
+  </FrontEndActions>
+</Mod>

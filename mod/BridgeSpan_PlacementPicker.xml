@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context Name="BridgeSpan_PlacementPicker">
+  <WorldAnchor ID="BankA" Hidden="1">
+    <Grid Anchor="C,C" Size="36,36" Style="TutorialCalloutGrid" ConsumeMouse="0">
+      <Label Anchor="C,C" Style="FontNormal22" String="A"/>
+    </Grid>
+  </WorldAnchor>
+  <WorldAnchor ID="BankB" Hidden="1">
+    <Grid Anchor="C,C" Size="36,36" Style="TutorialCalloutGrid" ConsumeMouse="0">
+      <Label Anchor="C,C" Style="FontNormal22" String="B"/>
+    </Grid>
+  </WorldAnchor>
+  <Container ID="PickerRoot" Size="parent,parent" Hidden="1">
+    <Box Size="parent,parent" Color="0,0,0,0" ConsumeMouse="1"/>
+    <Grid ID="Panel" Anchor="R,C" Offset="26,0" Size="340,420" Style="WindowFrameTitle" ConsumeMouse="1">
+      <Label Anchor="C,T" Offset="0,12" Style="WindowHeader" String="LOC_BS_CHOOSE_DIRECTION"/>
+      <Label Anchor="C,T" Offset="0,50" Style="BodyTextDark18" WrapWidth="300" String="LOC_BS_PREVIEW_HELP"/>
+      <Stack ID="Options" Anchor="C,T" Offset="0,114" StackGrowth="Bottom" StackPadding="8"/>
+      <GridButton ID="Cancel" Anchor="C,B" Offset="0,18" Size="300,41" Style="MainButton" String="LOC_CANCEL"/>
+    </Grid>
+  </Container>
+  <Instance Name="BridgeOption">
+    <GridButton ID="Button" Size="300,41" Style="MainButton"/>
+  </Instance>
+</Context>

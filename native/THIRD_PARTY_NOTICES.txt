@@ -1,0 +1,14 @@
+Research reference (architecture only; no Community Extension implementation copied):
+Wild-W/CivilizationVI_CommunityExtension, commit 2986a746b396eb93aad14f9afffb043a09c2c489.
+https://github.com/Wild-W/CivilizationVI_CommunityExtension
+Config.sql / CommunityExtension.modinfo show the game's package GameCores loader route.
+
+Bundled hook library source:
+TsudaKageyu/minhook v1.3.4, commit c3fcafdc10146beb5919319d0683e44e3c30d537.
+https://github.com/TsudaKageyu/minhook
+See vendor/minhook/LICENSE.txt (source tree) or Core-MINHOOK-LICENSE.txt
+(candidate package) for the full BSD license and HDE notices.
+Only Windows x64 source files are included. No downloaded executable is used.
+
+The game DLL is read locally to derive export names and a version fingerprint.
+It is NOT copied into the mod or redistributed.

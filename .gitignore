@@ -1,0 +1,12 @@
+/dist/
+/node_modules/
+/native/build/
+/tests/build/
+__pycache__/
+*.pyc
+*.log
+*.dmp
+*.Civ6Save
+.env
+.env.*
+!.env.example

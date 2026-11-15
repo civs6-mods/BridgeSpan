@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData><LocalizedText>
+  <Row Tag="LOC_BS_HEALTH_TITLE" Language="zh_Hans_CN"><Text>桥梁通行规则未生效</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_BODY" Language="zh_Hans_CN"><Text>BridgeSpan 无法确认“只能从两端上下桥”已启用。请返回主菜单，检查工坊更新，并关闭其他替换 GameCore 的模组后重新载入。[NEWLINE][NEWLINE]当前支持 Windows Steam《风云变幻》单人游戏。恢复前请勿继续这局或覆盖原存档。</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_CODE" Language="zh_Hans_CN"><Text>检查结果：{1}</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_RETRY" Language="zh_Hans_CN"><Text>重新检查</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_MENU" Language="zh_Hans_CN"><Text>返回主菜单</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_TITLE" Language="en_US"><Text>Bridge crossing rules are not active</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_BODY" Language="en_US"><Text>BridgeSpan cannot verify endpoint-only crossings. Return to the main menu, check Workshop updates, and disable other mods that replace GameCore before reloading.[NEWLINE][NEWLINE]Supported: Windows Steam Gathering Storm, single-player. Do not continue this game or overwrite your original save until the check succeeds.</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_CODE" Language="en_US"><Text>Check result: {1}</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_RETRY" Language="en_US"><Text>Check again</Text></Row>
+  <Row Tag="LOC_BS_HEALTH_MENU" Language="en_US"><Text>Main menu</Text></Row>
+</LocalizedText></GameData>

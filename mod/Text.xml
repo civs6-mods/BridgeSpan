@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameData>
+  <LocalizedText>
+    <Row Tag="LOC_BS_REQUIRES_SHIPBUILDING" Language="zh_Hans_CN">
+      <Text>需要先研究“造船术”，陆军才能通过桥梁。</Text>
+    </Row>
+    <Row Tag="LOC_BS_REQUIRES_SHIPBUILDING" Language="en_US">
+      <Text>Requires Shipbuilding so land units can cross the bridge.</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_1_NAME" Language="zh_Hans_CN">
+      <Text>石桥</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_1_NAME" Language="en_US">
+      <Text>Stone Bridge</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_2_NAME" Language="zh_Hans_CN">
+      <Text>跨海大桥</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_2_NAME" Language="en_US">
+      <Text>Sea Crossing</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_3_NAME" Language="zh_Hans_CN">
+      <Text>跨海大桥</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_3_NAME" Language="en_US">
+      <Text>Sea Crossing</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>沿直线跨越 1 格浅海或湖面，两端须落在陆地，桥头归属不限，可连接普通市中心；避开山地、运河区域和带运河外观标记的市中心，接桥的岸边不能有悬崖。全部桥身水格须属于生产城市，且无资源或其他区域。可清除的地貌、改良设施会在确认时列出；多格桥的后续水格在桥梁完工时清除。由城市生产建造，保留原有水域。[NEWLINE]途经桥梁的 [ICON_TradeRoute] 商路沿用原版运输效率规则，可提高来自目的地区域的 [ICON_Gold] 金币收益。加成取决于整条路线，并计入商路显示和结算。[NEWLINE]建造前还需研究“造船术”。陆军通行遵循所属文明的登船科技条件。</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_DESCRIPTION" Language="en_US">
+      <Text>City-produced bridge across one Coast or Lake tile. Land approaches may have any owner and may include ordinary City Centers. Mountain, Canal and canal-marked City Center approaches are excluded, and each approach edge must be cliff-free. Every deck tile must belong to the producing city and have no resource or other district. Removable features and improvements are listed before confirmation; support tiles are cleared when construction finishes.[NEWLINE][ICON_TradeRoute] Trade Routes passing through the bridge use the game's transportation efficiency rules and can multiply [ICON_Gold] Gold from districts at their destination. The bonus depends on the complete route and is included in normal trade yield displays and settlement.[NEWLINE]Construction also requires Shipbuilding. Land traversal follows the unit owner's embark technology requirements.</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_SEA_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>沿直线跨越 2～3 格浅海或湖面，两端须落在陆地，桥头归属不限，可连接普通市中心；避开山地、运河区域和带运河外观标记的市中心，接桥的岸边不能有悬崖。全部桥身水格须属于生产城市，且无资源或其他区域。可清除的地貌、改良设施会在确认时列出；多格桥的后续水格在桥梁完工时清除。选址后确认跨度和生产力，基础造价为 162 或 243。[NEWLINE]途经桥梁的 [ICON_TradeRoute] 商路沿用原版运输效率规则，可提高来自目的地区域的 [ICON_Gold] 金币收益。加成取决于整条路线，并计入商路显示和结算。[NEWLINE]建造前还需研究“造船术”。陆军通行遵循所属文明的登船科技条件。</Text>
+    </Row>
+    <Row Tag="LOC_DISTRICT_BS_SEA_DESCRIPTION" Language="en_US">
+      <Text>Cross 2–3 Coast or Lake tiles in a straight line. Land approaches may have any owner and may include ordinary City Centers. Mountain, Canal and canal-marked City Center approaches are excluded, and each approach edge must be cliff-free. Every deck tile must belong to the producing city and have no resource or other district. Removable features and improvements are listed before confirmation; support tiles are cleared when construction finishes. Base costs are 162 or 243.[NEWLINE][ICON_TradeRoute] Trade Routes passing through the bridge use the game's transportation efficiency rules and can multiply [ICON_Gold] Gold from districts at their destination. The bonus depends on the complete route and is included in normal trade yield displays and settlement.[NEWLINE]Construction also requires Shipbuilding. Land traversal follows the unit owner's embark technology requirements.</Text>
+    </Row>
+    <Row Tag="LOC_BS_NO_BRIDGE_SITE" Language="zh_Hans_CN">
+      <Text>此城没有符合跨度和桥头条件的桥位。</Text>
+    </Row>
+    <Row Tag="LOC_BS_NO_BRIDGE_SITE" Language="en_US">
+      <Text>This city has no site that meets the bridge span and approach requirements.</Text>
+    </Row>
+    <Row Tag="LOC_BS_PLACEMENT_COST" Language="zh_Hans_CN">
+      <Text>跨度 {1_Num} 格 · [ICON_Production] {2_Num} 生产力</Text>
+    </Row>
+    <Row Tag="LOC_BS_PLACEMENT_COST" Language="en_US">
+      <Text>Span {1_Num} · [ICON_Production] {2_Num} Production</Text>
+    </Row>
+    <Row Tag="LOC_BS_CHOOSE_DIRECTION" Language="zh_Hans_CN">
+      <Text>选择桥梁方案</Text>
+    </Row>
+    <Row Tag="LOC_BS_CHOOSE_DIRECTION" Language="en_US">
+      <Text>Choose a bridge layout</Text>
+    </Row>
+    <Row Tag="LOC_BS_DIRECTION_OPTION" Language="zh_Hans_CN">
+      <Text>方案 {1_Num} · 跨 {2_Num} 格</Text>
+    </Row>
+    <Row Tag="LOC_BS_DIRECTION_OPTION" Language="en_US">
+      <Text>Layout {1_Num} · {2_Num} tiles</Text>
+    </Row>
+    <Row Tag="LOC_BS_PREVIEW_HELP" Language="zh_Hans_CN">
+      <Text>移到选项上预览，点击后确认。桥将连接地图上标记的 A、B 两岸。</Text>
+    </Row>
+    <Row Tag="LOC_BS_PREVIEW_HELP" Language="en_US">
+      <Text>Hover to preview; click to review. The bridge connects the banks marked A and B.</Text>
+    </Row>
+    <Row Tag="LOC_BS_PLACEMENT_REMOVES" Language="zh_Hans_CN">
+      <Text>桥身第 {1_Num} 格：将移除{2}。</Text>
+    </Row>
+    <Row Tag="LOC_BS_PLACEMENT_REMOVES" Language="en_US">
+      <Text>Deck tile {1_Num}: removes {2}.</Text>
+    </Row>
+  </LocalizedText>
+</GameData>
