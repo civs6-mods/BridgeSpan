@@ -4,7 +4,9 @@
 
 Build bridges across coast and lake tiles in Civilization VI. Land units and traders cross between the shores, while ships can pass through the water tiles below.
 
-![BridgeSpan](workshop/preview.jpg)
+[![BridgeSpan gameplay demo](workshop/preview.jpg)](https://www.youtube.com/watch?v=GI03Ihe2g_Y)
+
+[Watch the gameplay demo on YouTube](https://www.youtube.com/watch?v=GI03Ihe2g_Y): before/after routes, land and naval passage, and 1–3-tile bridges.
 
 ## Current release
 

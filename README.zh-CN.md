@@ -4,7 +4,9 @@
 
 [English](README.md) · [Steam 创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) · [开发与打包](docs/DEVELOPMENT.md)
 
-![BridgeSpan](workshop/preview.jpg)
+[![BridgeSpan gameplay demo](workshop/preview.jpg)](https://www.youtube.com/watch?v=GI03Ihe2g_Y)
+
+[观看实机演示（YouTube）](https://www.youtube.com/watch?v=GI03Ihe2g_Y)：修桥前后路径对比、水陆通行，以及 1～3 格桥梁效果。
 
 ## 当前版本
 
