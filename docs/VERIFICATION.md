@@ -1,3 +1,7 @@
+# 42 bilingual update / 双语更新
+
+2026-11-17: Mod-list names and descriptions now use embedded en_US / zh_Hans_CN localization. Existing in-game translations are audited for matching keys and placeholders. Gameplay scripts and native binaries are unchanged. This update does not enable multiplayer or hotseat. No new in-game language-switch playtest is claimed.
+
 # v41 验收范围 / Verification scope
 
 2026-11-15：v41 已公开。原版石桥解锁改为“工程”，《和而不同》保留“拱券”；造船术要求和跨海大桥钢铁解锁不变。三个 SQLite 科技树用例通过，真实 Steam 下载的全部 72 个文件与发布清单一致。此版本没有新增游戏内实测；其余玩法、资源和原生 DLL 沿用 v40 的验收范围。

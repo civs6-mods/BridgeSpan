@@ -11,3 +11,5 @@ for name,arg in cases:
 for name in ['test_clearance.py','test_unlock.py','test_damage.py']:
  subprocess.run([sys.executable,str(root/'tests'/name)],check=True)
 print('All six offline regression suites passed.')
+
+subprocess.run([sys.executable,str(root/'tests/test_localization.py')],check=True)

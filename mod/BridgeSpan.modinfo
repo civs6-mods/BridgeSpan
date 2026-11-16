@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="41">
+<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="42">
   <Properties>
-    <Name>BridgeSpan 自由造桥 | Build Your Own Bridges</Name>
-    <Description>建造1格石桥和2至3格跨海大桥。陆军与商人仅从两端上下桥，船可穿过桥下。订阅后在“额外内容”中启用即可。适用于 Windows Steam《风云变幻》单人游戏，支持与《和而不同》搭配使用。</Description>
+    <Name>LOC_BS_MOD_NAME</Name>
+    <Description>LOC_BS_MOD_DESCRIPTION</Description>
     <Authors>xuanda0201</Authors>
     <AffectsSavedGames>1</AffectsSavedGames>
     <CompatibleVersions>2.0</CompatibleVersions>
@@ -15,6 +15,16 @@
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
   </ActionCriteria>
+  <LocalizedText>
+    <Text id="LOC_BS_MOD_NAME">
+      <en_US>BridgeSpan — Build Your Own Bridges</en_US>
+      <zh_Hans_CN>自由造桥</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_BS_MOD_DESCRIPTION">
+      <en_US>Build one-tile stone bridges and two- or three-tile sea bridges. Land units and traders use the ends; ships can pass through the water below. For Windows Steam Gathering Storm single-player, including Harmony in Diversity.</en_US>
+      <zh_Hans_CN>建造1格石桥和2至3格跨海大桥。陆军与商人从两端上下桥，船可穿过桥下。适用于 Windows Steam《风云变幻》单人游戏，可与《和而不同》搭配使用。</zh_Hans_CN>
+    </Text>
+  </LocalizedText>
   <InGameActions>
     <UpdateDatabase id="BS_Data" criteria="GS">
       <Properties>

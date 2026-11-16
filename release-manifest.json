@@ -1,5 +1,5 @@
 {
-  "version": 41,
+  "version": 42,
   "files": {
     "ArtDefs/Buildings.artdef": "884891c17cd4124b04f69c8e783a210b8c628fd7761459d4c44ade957796e363",
     "ArtDefs/Districts.artdef": "d845c3a3e02f3b6c4d50115ba871d29f35f24162c0e9ec1bcde7f81c2ada3cfa",
@@ -7,7 +7,7 @@
     "ArtDefs/WonderMovie.artdef": "ffa1d64c9db80e702c0311b3c750323860eb929cc4a6d16138e327ea63cd0b40",
     "Binaries/Win64/GameCore_XP2_BridgeSpan_FinalRelease.dll": "eaa17840f5a740799c07822440817f5339599c438751abd39daeff0286b25361",
     "BridgeSpan.dep": "6c09968f3203ed88ef43d7fd141360935244c7f7408aefaef445fe11c747a0bb",
-    "BridgeSpan.modinfo": "9bac4224c5fe1c843fb7d48e067eaaceec4c9db42846c21703bad98ada9fd8af",
+    "BridgeSpan.modinfo": "9c7c12885473f95fc4fb48725c840b13f013448fbb6b1145dc9125cd191df33d",
     "BridgeSpan_DistrictCommon.lua": "db5025c99ac92b0f2d780c9c98ed31747d00027e096f469be14567c4dfc7dfec",
     "BridgeSpan_DistrictGameplay.lua": "4ab90580c5ccb19ae196eb8741999878087a3f306184417c006487b19c31427a",
     "BridgeSpan_HealthMonitor.lua": "c7e6d90b9decce4731f4fc775754053e22b0e6dcf747314796f12a8f2bceb7b1",
