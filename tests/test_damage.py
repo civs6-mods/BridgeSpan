@@ -17,6 +17,30 @@ needle = '    assert(start.owner==-1 and finish.purchaseCity==bankCity,"bank own
 assert fixture.count(needle) == 1
 cases = r'''
     local intact=axes;
+    local originalIsPillaged=buildings.IsPillaged;
+    -- Native building pillage is the first target on a bridge tile. One event
+    -- must exhaust both targets, while a district repair rebuilds the component.
+    for segment,index in ipairs(plan.Plots) do
+        local deck=byIndex[index];
+        local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
+        buildings:SetPillaged(marker,true);
+        assert(deck:IsPillaged() and buildings:IsPillaged(marker),"first pillage left a second target");
+        for other,otherIndex in ipairs(plan.Plots) do
+            if other~=segment then assert(not byIndex[otherIndex]:IsPillaged(),"pillage spread to another tile");end
+        end
+        deck:SetPillaged(false);
+        assert(not buildings:IsPillaged(marker) and locations[marker]==index,"district repair did not restore component");
+        deck:SetPillaged(true);
+        assert(buildings:IsPillaged(marker),"district-only damage left crossing active");
+        deck:SetPillaged(false);
+        -- Old saves can have only the hidden building damaged.
+        pillagedBuildings[marker]=true;
+        Events.LoadGameViewStateDone.Fire();
+        assert(deck:IsPillaged(),"legacy hidden damage was not made repairable");
+        deck:SetPillaged(false);
+        assert(not buildings:IsPillaged(marker));
+        assert(axes==intact,"damage/repair changed endpoint restrictions");
+    end
     for segment,index in ipairs(plan.Plots) do
         local deck=byIndex[index];
         deck.IsPillaged=function() return true; end;
@@ -37,6 +61,7 @@ cases = r'''
         Events.PlayerTurnActivated.Fire(0);
         assert(axes==intact,"repair failed to restore restrictions");
     end
+    buildings.IsPillaged=originalIsPillaged;
     local oldOwner=city.GetOwner;
     local previousProperties=properties;
     properties={}; -- real engine replaces the city object without Lua properties

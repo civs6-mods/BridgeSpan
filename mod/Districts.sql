@@ -3620,3 +3620,9 @@ UPDATE Districts SET Description='LOC_DISTRICT_BS_SEA_DESCRIPTION' WHERE Distric
 -- District bridgeheads use the direction from their saved bridge plan.
 DELETE FROM BuildingModifiers WHERE ModifierId='GOLDENGATE_REMOVE_CLIFFS'
   AND (BuildingType GLOB 'BUILDING_BS_DECK_*' OR BuildingType GLOB 'BUILDING_BS_SUPPORT_*');
+
+-- Native repairs reject InternalOnly districts. A zero construction limit
+-- blocks new support starts while still permitting repairs of existing tiles.
+UPDATE Districts SET InternalOnly=0,MaxPerPlayer=0,
+  Name='LOC_DISTRICT_BS_2_NAME',Description='LOC_DISTRICT_BS_SEA_DESCRIPTION'
+  WHERE DistrictType IN ('DISTRICT_BS_SUPPORT_2','DISTRICT_BS_SUPPORT_3');

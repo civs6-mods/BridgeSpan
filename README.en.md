@@ -10,7 +10,7 @@ Build bridges across coast and lake tiles in Civilization VI. Land units and tra
 
 ## Current release
 
-**v42 is publicly available.** [Subscribe on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919). The repository's `mod/` matches the verified v42 release package.
+**v43 is publicly available.** [Subscribe on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919). The repository's `mod/` matches the verified v43 release package.
 
 - One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
 - Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
@@ -34,12 +34,12 @@ The bridge must cross consecutive coast or lake tiles belonging to the same prod
 
 | Path | Contents |
 | --- | --- |
-| `mod/` | Complete v42 installable package: Lua, SQL, UI, compiled art and native module |
+| `mod/` | Complete v43 installable package: Lua, SQL, UI, compiled art and native module |
 | `native/` | Native C/C++ sources, MinHook sources and build entry point |
 | `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
 | `scripts/` | Package verification, offline tests and ZIP packaging |
 | `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
-| `release-manifest.json` | SHA-256 hashes for the 72 v42 release files |
+| `release-manifest.json` | SHA-256 hashes for the 72 v43 release files |
 
 Quick verification and packaging:
 
@@ -50,7 +50,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v42.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
+The ZIP is written to `dist/BridgeSpan-v43.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
 ## Contributing
 

@@ -40,7 +40,8 @@ local function item(n,repair) return {Type="DISTRICT_BS_BRIDGE_"..n,Hash=n,Disab
 Modding={IsModActive=function() return false end};
 GameConfiguration.GetValue=function() return false end;
 Locale={Lookup=function(key) return key end};
-GetData=function() return {City=city,DistrictItems={item(1),item(2),item(3)}} end;
+local baseItems={item(1),item(2),item(3)};
+GetData=function() return {City=city,DistrictItems=baseItems} end;
 include("ProductionPanel_BridgeSpan");
 local data=GetData();
 assert(#data.DistrictItems==2,"sea entries no longer grouped");
@@ -50,6 +51,16 @@ for _,it in ipairs(data.DistrictItems) do
 end
 Players[0].GetTechs=techs;
 print("PASS: grouped production entries explain the missing technology");
+-- Repairs stay separate; internal support types must never become new starts.
+local function districtItem(name,repair)
+    return {Type=name,Hash=99,Disabled=false,Repair=repair,ToolTip="original"};
+end;
+baseItems={districtItem("DISTRICT_BS_SUPPORT_2",false),districtItem("DISTRICT_BS_SUPPORT_3",false),
+    districtItem("DISTRICT_BS_SUPPORT_2",true),districtItem("DISTRICT_BS_SUPPORT_3",true),
+    item(2,true),item(3,true)};
+data=GetData();assert(#data.DistrictItems==4,"repair entries hidden or support new starts exposed");
+for _,it in ipairs(data.DistrictItems)do assert(it.Repair and not it.Disabled);end;
+print("PASS: separate bridge/support repairs without standalone support construction");
 '''
 out = root / 'build/unlock-acceptance.lua'
 out.write_text(fixture, encoding='utf-8')

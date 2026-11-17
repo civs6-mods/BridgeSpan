@@ -1,3 +1,9 @@
+# v43 单层劫掠与修复 / Single-layer pillage and repair
+
+2026-11-17: A bridge tile now has one player-facing damage/repair layer. Actual DX12 root and middle-tile pillage/repair checks and offline regressions passed. See [scoped verification](SINGLE-LAYER-PILLAGE.md). Native DLL and art are unchanged from v42.
+
+Workshop item 3838759919 accepted v43 and remains public. All 72 actual Steam-downloaded files (91,778,337 bytes) match the v43 release manifest. Only the mod version, district gameplay Lua, district SQL and production panel adapter differ from v42. The content update retained the existing title, bilingual description and media.
+
 # 42 bilingual update / 双语更新
 
 2026-11-17: Mod-list names and descriptions now use embedded en_US / zh_Hans_CN localization. Existing in-game translations are audited for matching keys and placeholders. Gameplay scripts and native binaries are unchanged. This update does not enable multiplayer or hotseat. No new in-game language-switch playtest is claimed.

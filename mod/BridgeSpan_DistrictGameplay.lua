@@ -36,6 +36,80 @@ end
 
 local HealthyMarker=B.HealthyMarker;
 
+-- The internal Bridge=1 building is an engine component, not a second player
+-- damage/repair target. Keep both native flags in one state per water tile.
+local damageBusy=false;
+local function SegmentAt(city,plan,segment)
+    local plot=Map.GetPlotByIndex(plan.Plots[segment]);
+    local district=plot and CityManager.GetDistrictAt(plot);
+    if not plan.Complete or not B.BelongsToCity(plot,city) or not district
+        or plot:GetDistrictType()~=B.District(plan,segment).Index then return; end
+    return plot,district,GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
+end
+
+local function SetSegmentDamage(city,plan,segment,pillaged)
+    if damageBusy then return; end
+    local plot,district,marker=SegmentAt(city,plan,segment);
+    if not plot or not marker then return; end
+    damageBusy=true;
+    local ok,err=pcall(function()
+        local buildings=city:GetBuildings();
+        if pillaged then
+            if not district:IsPillaged() then district:SetPillaged(true); end
+            if buildings:HasBuilding(marker.Index) and not buildings:IsPillaged(marker.Index) then
+                buildings:SetPillaged(marker.Index,true);
+            end
+        elseif not district:IsPillaged() then
+            -- Simply clearing IsPillaged does not reliably restore the native
+            -- crossing flag. Rebuild this tile's component like save restoration.
+            if buildings:HasBuilding(marker.Index) then buildings:RemoveBuilding(marker.Index); end
+            city:GetBuildQueue():CreateIncompleteBuilding(marker.Index,plot:GetIndex(),100);
+            assert(buildings:GetBuildingLocation(marker.Index)==plot:GetIndex(),"Bridge repair marker misplaced");
+        end
+    end);
+    damageBusy=false;
+    if not ok then print("[BridgeSpanDistrict] Damage sync error",city:GetID(),plan.Anchor,segment,tostring(err)); end
+end
+
+local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
+    if damageBusy or GameConfiguration.IsAnyMultiplayer() or not (pillaged==true or pillaged==1) then return; end
+    local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
+    if not city then return; end
+    for _,plan in pairs(B.Records(city)) do
+        for segment in ipairs(plan.Plots) do
+            local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
+            if marker and marker.Index==buildingType then SetSegmentDamage(city,plan,segment,true);return;end
+        end
+    end
+end
+
+local function DistrictDamageChanged(owner,districtID,cityID,x,y)
+    if damageBusy or GameConfiguration.IsAnyMultiplayer() then return; end
+    local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
+    local plot=Map.GetPlot(x,y);
+    if not city or not plot then return; end
+    for _,plan in pairs(B.Records(city)) do
+        for segment,index in ipairs(plan.Plots) do
+            if index==plot:GetIndex() then
+                local _,district=SegmentAt(city,plan,segment);
+                if district then SetSegmentDamage(city,plan,segment,district:IsPillaged());end
+                return;
+            end
+        end
+    end
+end
+
+local function AdoptLegacyDamage(city,plan)
+    local buildings=city:GetBuildings();
+    for segment in ipairs(plan.Plots) do
+        local plot,district,marker=SegmentAt(city,plan,segment);
+        if plot and marker and (district:IsPillaged()
+            or buildings:HasBuilding(marker.Index) and buildings:IsPillaged(marker.Index)) then
+            SetSegmentDamage(city,plan,segment,true);
+        end
+    end
+end
+
 local function PublishBridgeAxes()
     if busy or GameConfiguration.IsAnyMultiplayer() then return; end
     local rows={};
@@ -247,6 +321,7 @@ local function Removed(owner,districtID,cityID,x,y,districtType)
 end
 
 local function RestoreBridge(city,plan)
+    AdoptLegacyDamage(city,plan);
     local buildings=city:GetBuildings();
     local queue=city:GetBuildQueue();
     local restored=0;
@@ -313,6 +388,8 @@ Events.DistrictRemovedFromMap.Add(Removed);
 Events.DistrictRemovedFromMap.Add(PublishBridgeAxes);
 Events.LoadGameViewStateDone.Add(RestoreOnLoad);
 Events.DistrictPillaged.Add(PublishBridgeAxes);
+Events.DistrictPillaged.Add(DistrictDamageChanged);
+GameEvents.BuildingPillageStateChanged.Add(BuildingDamageChanged);
 Events.CityAddedToMap.Add(CityAdded);
 Events.CityTransfered.Add(Transferred);
 Events.CityRemovedFromMap.Add(PublishBridgeAxes);

@@ -1,5 +1,12 @@
 # Changelog
 
+## 43
+
+- One pillage damages one bridge tile and pays once. The internal crossing component shares the district's damaged state.
+- Repairing the district restores its crossing component and land passage. Existing saves with a damaged internal component gain a normal district repair target.
+- Support tiles have native repair entries without allowing standalone support construction. Separate bridge repair entries remain visible.
+- Windows Steam DX12 three-tile bridge playtest and offline regressions: see [single-layer pillage verification](docs/SINGLE-LAYER-PILLAGE.md).
+
 ## 40
 
 - Simplify the bilingual Workshop description and in-game summary.

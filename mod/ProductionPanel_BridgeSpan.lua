@@ -10,7 +10,7 @@ include("BridgeSpan_DistrictCommon");
 local baseGetData=GetData;
 local B=BridgeSpanDistrict;
 local function isSeaBridge(item)
-    return item.Type=="DISTRICT_BS_BRIDGE_2" or item.Type=="DISTRICT_BS_BRIDGE_3";
+    return not item.Repair and (item.Type=="DISTRICT_BS_BRIDGE_2" or item.Type=="DISTRICT_BS_BRIDGE_3");
 end
 
 function GetData()
@@ -21,7 +21,10 @@ function GetData()
     local visible={};
     for _,item in ipairs(data.DistrictItems) do
         local _,direction=B.Length(item.Type);
-        if not direction or item.Repair or queue:HasBeenPlaced(item.Hash) then
+        local support=item.Type=="DISTRICT_BS_SUPPORT_2" or item.Type=="DISTRICT_BS_SUPPORT_3";
+        if support and item.Repair then
+            visible[#visible+1]=item;
+        elseif not support and (not direction or item.Repair or queue:HasBeenPlaced(item.Hash)) then
             visible[#visible+1]=item;
         end
     end

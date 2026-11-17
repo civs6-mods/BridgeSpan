@@ -10,7 +10,7 @@
 
 ## 当前版本
 
-**v42，已公开发布。** [订阅 Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919)。本仓库的 `mod/` 与已验证的 v42 发布包一致。
+**v43，已公开发布。** [订阅 Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919)。本仓库的 `mod/` 与已验证的 v43 发布包一致。
 
 - 1 格石桥，以及 2 格、3 格跨海大桥，由城市生产；同一城市可以建多座。
 - 陆军和商人只从桥的两端上下桥；船只可以经过桥身水格。
@@ -34,12 +34,12 @@
 
 | 路径 | 内容 |
 | --- | --- |
-| `mod/` | v42 完整可安装包，含 Lua、SQL、界面、编译美术资源和原生模块 |
+| `mod/` | v43 完整可安装包，含 Lua、SQL、界面、编译美术资源和原生模块 |
 | `native/` | 对应的原生 C/C++ 源码、MinHook 源码及构建入口 |
 | `tests/` | 选址、方案面板、清理、科技解锁、损坏与健康检查的离线回归 |
 | `scripts/` | 包完整性验证、离线测试与 ZIP 打包 |
 | `workshop/` | 工坊中英文说明、封面、截图及顺序 |
-| `release-manifest.json` | v42 的 72 个发布文件 SHA-256 清单 |
+| `release-manifest.json` | v43 的 72 个发布文件 SHA-256 清单 |
 
 快速验证与打包：
 
@@ -50,7 +50,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-生成 `dist/BridgeSpan-v42.zip`。开发者重编原生模块的环境要求和命令见[开发说明](docs/DEVELOPMENT.md)。
+生成 `dist/BridgeSpan-v43.zip`。开发者重编原生模块的环境要求和命令见[开发说明](docs/DEVELOPMENT.md)。
 
 ## 参与开发
 
