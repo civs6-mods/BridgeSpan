@@ -52,6 +52,10 @@ python scripts/package.py
 
 生成 `dist/BridgeSpan-v43.zip`。开发者重编原生模块的环境要求和命令见[开发说明](docs/DEVELOPMENT.md)。
 
+## 问题诊断
+
+[下载一键诊断工具](https://github.com/civs6-mods/BridgeSpan/releases/tag/diagnostics-v1.0.0)：遇到问题后打开客户端，点击“生成诊断包”，将桌面的 ZIP 和报错截图发给作者即可。工具自动查找并整理日志，无需安装，不会自动上传。[源码与说明](support/diagnostics/README.md)。
+
 ## 参与开发
 
 欢迎通过 [Issues](https://github.com/civs6-mods/BridgeSpan/issues) 提交 Bug 和功能建议，也欢迎通过 Pull Request 参与翻译、测试、Lua / UI 开发及桥梁模型美术。

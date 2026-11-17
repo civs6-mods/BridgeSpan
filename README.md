@@ -52,6 +52,10 @@ python scripts/package.py
 
 The ZIP is written to `dist/BridgeSpan-v43.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
+## Diagnostics
+
+[Download the one-click diagnostics client](https://github.com/civs6-mods/BridgeSpan/releases/tag/diagnostics-v1.0.0). After encountering a problem, click **生成诊断包** (Create diagnostics package) and send the desktop ZIP plus an error screenshot to the author. Log selection is automatic; no installation or automatic upload. The current UI is in Simplified Chinese. [Source and details](support/diagnostics/README.md).
+
 ## Contributing
 
 Use [Issues](https://github.com/civs6-mods/BridgeSpan/issues) for bug reports and feature suggestions. Pull requests for translations, testing, Lua / UI development, and bridge models or art are welcome.
