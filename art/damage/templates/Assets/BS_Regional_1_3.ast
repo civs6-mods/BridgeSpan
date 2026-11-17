@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects..AssetInstance>
+  <m_BehaviorData>
+    <m_behaviorDataSets>
+      <m_animationBindings>
+        <m_Bindings />
+      </m_animationBindings>
+      <m_timelineBindings>
+        <m_Bindings />
+      </m_timelineBindings>
+      <m_timelines>
+        <m_Timelines />
+      </m_timelines>
+      <m_attachmentPoints>
+        <m_Points />
+      </m_attachmentPoints>
+      <m_stateSet />
+    </m_behaviorDataSets>
+    <m_behaviorInstances />
+    <m_dsgName text="Standard_WonderMovie" />
+    <m_referenceGeometryNames />
+  </m_BehaviorData>
+  <m_GeometrySet>
+    <m_ModelInstances>
+      <Element>
+        <m_Name text="BS_RegionalPlaced_1_3" />
+        <m_GeoName text="BS_RegionalPlaced_1_3" />
+        <m_GroupStates>
+          <Element>
+            <m_Values>
+              <m_Values>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="BS_Regional_1" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="Material" />
+                </Element>
+                <Element class="AssetObjects..BoolValue">
+                  <m_bValue>true</m_bValue>
+                  <m_ParamName text="Visible" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="FOW/DefaultMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="FOWMaterial" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="DefaultSnowMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="SnowMaterial" />
+                </Element>
+              </m_Values>
+            </m_Values>
+            <m_GroupName text="BS_Regional_1" />
+            <m_MeshName text="BS_RegionalPlaced_1_3" />
+            <m_StateName text="Default" />
+          </Element>
+          <Element>
+            <m_Values>
+              <m_Values>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="BS_Regional_1" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="Material" />
+                </Element>
+                <Element class="AssetObjects..BoolValue">
+                  <m_bValue>true</m_bValue>
+                  <m_ParamName text="Visible" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="FOW/DefaultMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="FOWMaterial" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="DefaultSnowMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="SnowMaterial" />
+                </Element>
+              </m_Values>
+            </m_Values>
+            <m_GroupName text="BS_Regional_1" />
+            <m_MeshName text="BS_RegionalPlaced_1_3" />
+            <m_StateName text="Worked" />
+          </Element>
+          <Element>
+            <m_Values>
+              <m_Values>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="BS_Regional_1" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="Material" />
+                </Element>
+                <Element class="AssetObjects..BoolValue">
+                  <m_bValue>true</m_bValue>
+                  <m_ParamName text="Visible" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="FOW/DefaultMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="FOWMaterial" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="DefaultSnowMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="SnowMaterial" />
+                </Element>
+              </m_Values>
+            </m_Values>
+            <m_GroupName text="BS_Regional_1" />
+            <m_MeshName text="BS_RegionalPlaced_1_3" />
+            <m_StateName text="Unworked" />
+          </Element>
+          <Element>
+            <m_Values>
+              <m_Values>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="BS_Regional_1" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="Material" />
+                </Element>
+                <Element class="AssetObjects..BoolValue">
+                  <m_bValue>true</m_bValue>
+                  <m_ParamName text="Visible" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="FOW/DefaultMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="FOWMaterial" />
+                </Element>
+                <Element class="AssetObjects..ObjectValue">
+                  <m_ObjectName text="DefaultSnowMaterial" />
+                  <m_eObjectType>MATERIAL</m_eObjectType>
+                  <m_ParamName text="SnowMaterial" />
+                </Element>
+              </m_Values>
+            </m_Values>
+            <m_GroupName text="BS_Regional_1" />
+            <m_MeshName text="BS_RegionalPlaced_1_3" />
+            <m_StateName text="Ruined" />
+          </Element>
+        </m_GroupStates>
+      </Element>
+    </m_ModelInstances>
+  </m_GeometrySet>
+  <m_SplineSet>
+    <m_Splines />
+  </m_SplineSet>
+  <m_CookParams>
+    <m_Values />
+  </m_CookParams>
+  <m_Version>
+    <major>4</major>
+    <minor>0</minor>
+    <build>350</build>
+    <revision>474</revision>
+  </m_Version>
+  <m_ParticleEffects />
+  <m_Geometries />
+  <m_Animations />
+  <m_Materials />
+  <m_ClassName text="WonderMovie" />
+  <m_DataFiles />
+  <m_Name text="BS_Regional_1_3" />
+  <m_Description text="" />
+  <m_Tags />
+</AssetObjects..AssetInstance>

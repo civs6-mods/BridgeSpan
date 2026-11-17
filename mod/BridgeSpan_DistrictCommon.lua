@@ -17,10 +17,34 @@ function B.PlacementDistrict(plan)
     return GameInfo.Districts["DISTRICT_BS_BRIDGE_"..plan.Span.."_D"..plan.Direction];
 end
 function B.Marker(plan, segment, slot)
+    if segment==1 and (plan.ArtMask or 0)>0 then
+        return "BUILDING_BS_DAMAGED_"..plan.Span.."_"..plan.Direction.."_M"..string.format("%d",plan.ArtMask).."_S"..slot..(plan.Root and "" or "_L");
+    end
     local family=segment==1 and ("BUILDING_BS_DECK_"..plan.Span.."_"..plan.Direction)
         or ("BUILDING_BS_SUPPORT_"..segment);
     if segment==1 and plan.Root then family=family.."_AXIS"; end
     return slot==1 and family or (family.."_S"..slot);
+end
+function B.RepairProject(plan)
+    return "PROJECT_BS_REPAIR_"..plan.Span.."_S"..(plan.Slot or 1);
+end
+function B.RepairPermit(plan)
+    return "BUILDING_BS_REPAIR_"..plan.Span.."_S"..(plan.Slot or 1);
+end
+function B.DamageMask(city,plan)
+    local mask=0;
+    local buildings=city:GetBuildings();
+    for segment,index in ipairs(plan.Plots) do
+        local plot=Map.GetPlotByIndex(index);
+        local district=plot and CityManager.GetDistrictAt(plot);
+        local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
+        if district and B.BelongsToCity(plot,city) and district:IsComplete()
+            and plot:GetDistrictType()==B.District(plan,segment).Index
+            and (district:IsPillaged() or marker and buildings:IsPillaged(marker.Index)) then
+            mask=mask+2^(segment-1);
+        end
+    end
+    return math.floor(mask);
 end
 function B.HealthyMarker(city,plan,segment,buildings)
     local index=plan.Plots[segment];

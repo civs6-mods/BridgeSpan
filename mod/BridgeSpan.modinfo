@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="43">
+<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="44">
   <Properties>
     <Name>LOC_BS_MOD_NAME</Name>
     <Description>LOC_BS_MOD_DESCRIPTION</Description>
@@ -76,6 +76,7 @@
       <File>BS_BridgeDistricts80.dds</File>
       <File>BS_BridgeDistricts128.dds</File>
       <File>BS_BridgeDistricts256.dds</File>
+      <File>BridgeSpan_Damage.lua</File>
     </ImportFiles>
     <ReplaceUIScript id="BS_WorldInput" criteria="GS">
       <Properties>
@@ -132,6 +133,24 @@
     <ImportFiles id="BS_PlacementPickerFiles" criteria="GS">
       <File>BridgeSpan_PlacementPicker.lua</File>
     </ImportFiles>
+    <UpdateDatabase id="BS_Damage" criteria="GS">
+      <Properties>
+        <LoadOrder>2000002</LoadOrder>
+      </Properties>
+      <File>Damage.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="BS_DamageText" criteria="GS">
+      <Properties>
+        <LoadOrder>2000002</LoadOrder>
+      </Properties>
+      <File>DamageText.xml</File>
+    </UpdateText>
+    <UpdateIcons id="BS_DamageIcons" criteria="GS">
+      <Properties>
+        <LoadOrder>2000002</LoadOrder>
+      </Properties>
+      <File>DamageIcons.sql</File>
+    </UpdateIcons>
   </InGameActions>
   <Files>
     <File>ArtDefs/Buildings.artdef</File>
@@ -205,6 +224,27 @@
     <File>HealthText.xml</File>
     <File>BridgeSpan_PlacementPicker.lua</File>
     <File>BridgeSpan_PlacementPicker.xml</File>
+    <File>Damage.sql</File>
+    <File>DamageIcons.sql</File>
+    <File>DamageText.xml</File>
+    <File>BridgeSpan_Damage.lua</File>
+    <File>Platforms/Windows/BLPs/BS_DamagedWorld.blp</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_2_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_2_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_2_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_2_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_AO</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_1_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_2_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_3_D_null</File>
   </Files>
   <FrontEndActions>
     <UpdateDatabase id="BS_CoreConfig">

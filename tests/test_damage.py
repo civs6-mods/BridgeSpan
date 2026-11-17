@@ -24,20 +24,25 @@ cases = r'''
         local deck=byIndex[index];
         local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         buildings:SetPillaged(marker,true);
+        marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         assert(deck:IsPillaged() and buildings:IsPillaged(marker),"first pillage left a second target");
         for other,otherIndex in ipairs(plan.Plots) do
             if other~=segment then assert(not byIndex[otherIndex]:IsPillaged(),"pillage spread to another tile");end
         end
         deck:SetPillaged(false);
+        marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         assert(not buildings:IsPillaged(marker) and locations[marker]==index,"district repair did not restore component");
         deck:SetPillaged(true);
+        marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         assert(buildings:IsPillaged(marker),"district-only damage left crossing active");
         deck:SetPillaged(false);
+        marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         -- Old saves can have only the hidden building damaged.
         pillagedBuildings[marker]=true;
         Events.LoadGameViewStateDone.Fire();
         assert(deck:IsPillaged(),"legacy hidden damage was not made repairable");
         deck:SetPillaged(false);
+        marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
         assert(not buildings:IsPillaged(marker));
         assert(axes==intact,"damage/repair changed endpoint restrictions");
     end

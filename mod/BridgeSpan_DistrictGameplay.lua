@@ -46,6 +46,9 @@ local function SegmentAt(city,plan,segment)
         or plot:GetDistrictType()~=B.District(plan,segment).Index then return; end
     return plot,district,GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
 end
+include("BridgeSpan_Damage");
+local SyncBridgeDamage=BridgeSpanInitializeDamage(B,SegmentAt,Remember,
+    function(value)damageBusy=value;end,function()return damageBusy;end);
 
 local function SetSegmentDamage(city,plan,segment,pillaged)
     if damageBusy then return; end
@@ -69,6 +72,7 @@ local function SetSegmentDamage(city,plan,segment,pillaged)
     end);
     damageBusy=false;
     if not ok then print("[BridgeSpanDistrict] Damage sync error",city:GetID(),plan.Anchor,segment,tostring(err)); end
+    if ok then SyncBridgeDamage(city,plan);end
 end
 
 local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
@@ -318,6 +322,7 @@ local function Removed(owner,districtID,cityID,x,y,districtType)
             if district then CityManager.DestroyDistrict(district); end
         end
     end
+    SyncBridgeDamage(city,plan);
 end
 
 local function RestoreBridge(city,plan)
@@ -336,6 +341,7 @@ local function RestoreBridge(city,plan)
             restored=restored+1;
         end
     end
+    SyncBridgeDamage(city,plan);
     return restored;
 end
 

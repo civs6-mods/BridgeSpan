@@ -51,16 +51,15 @@ for _,it in ipairs(data.DistrictItems) do
 end
 Players[0].GetTechs=techs;
 print("PASS: grouped production entries explain the missing technology");
--- Repairs stay separate; internal support types must never become new starts.
+-- Whole-bridge projects replace per-segment district repair entries.
 local function districtItem(name,repair)
     return {Type=name,Hash=99,Disabled=false,Repair=repair,ToolTip="original"};
 end;
 baseItems={districtItem("DISTRICT_BS_SUPPORT_2",false),districtItem("DISTRICT_BS_SUPPORT_3",false),
     districtItem("DISTRICT_BS_SUPPORT_2",true),districtItem("DISTRICT_BS_SUPPORT_3",true),
     item(2,true),item(3,true)};
-data=GetData();assert(#data.DistrictItems==4,"repair entries hidden or support new starts exposed");
-for _,it in ipairs(data.DistrictItems)do assert(it.Repair and not it.Disabled);end;
-print("PASS: separate bridge/support repairs without standalone support construction");
+data=GetData();assert(#data.DistrictItems==0,"per-segment repair or support construction exposed");
+print("PASS: bridge/support district repair rows replaced by whole-bridge projects");
 '''
 out = root / 'build/unlock-acceptance.lua'
 out.write_text(fixture, encoding='utf-8')

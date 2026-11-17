@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetObjects..XLP>
+  <m_Version>
+    <major>4</major>
+    <minor>0</minor>
+    <build>350</build>
+    <revision>474</revision>
+  </m_Version>
+  <m_ClassName text="WonderMovie" />
+  <m_PackageName text="BS_RegionalWorld" />
+  <m_Entries>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_0" />
+      <m_ObjectName text="BS_Regional_1_0" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_1" />
+      <m_ObjectName text="BS_Regional_1_1" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_2" />
+      <m_ObjectName text="BS_Regional_1_2" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_3" />
+      <m_ObjectName text="BS_Regional_1_3" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_4" />
+      <m_ObjectName text="BS_Regional_1_4" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_1_5" />
+      <m_ObjectName text="BS_Regional_1_5" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_0" />
+      <m_ObjectName text="BS_Regional_2_0" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_1" />
+      <m_ObjectName text="BS_Regional_2_1" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_2" />
+      <m_ObjectName text="BS_Regional_2_2" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_3" />
+      <m_ObjectName text="BS_Regional_2_3" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_4" />
+      <m_ObjectName text="BS_Regional_2_4" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_2_5" />
+      <m_ObjectName text="BS_Regional_2_5" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_0" />
+      <m_ObjectName text="BS_Regional_3_0" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_1" />
+      <m_ObjectName text="BS_Regional_3_1" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_2" />
+      <m_ObjectName text="BS_Regional_3_2" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_3" />
+      <m_ObjectName text="BS_Regional_3_3" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_4" />
+      <m_ObjectName text="BS_Regional_3_4" />
+    </Element>
+    <Element>
+      <m_EntryID text="BS_REGIONAL_3_5" />
+      <m_ObjectName text="BS_Regional_3_5" />
+    </Element>
+  </m_Entries>
+  <m_AllowedPlatforms>
+    <Element>WINDOWS</Element>
+  </m_AllowedPlatforms>
+</AssetObjects..XLP>

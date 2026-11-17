@@ -1,3 +1,7 @@
+# v44 受损外观与整桥修复 / Damaged art and whole-bridge repair
+
+2026-11-17: DX11 and DX12 each passed 132 native damage/repair combinations, actual Warrior pillage and bidirectional crossing on all three spans, and damaged save loading. All three span families were visually checked. See [scope and procedures](DAMAGED-BRIDGE-V44.md). The native DLL is unchanged from v43.
+
 # v43 单层劫掠与修复 / Single-layer pillage and repair
 
 2026-11-17: A bridge tile now has one player-facing damage/repair layer. Actual DX12 root and middle-tile pillage/repair checks and offline regressions passed. See [scoped verification](SINGLE-LAYER-PILLAGE.md). Native DLL and art are unchanged from v42.

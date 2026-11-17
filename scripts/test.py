@@ -8,8 +8,8 @@ cases=[('test_hover.lua',root/'mod/WorldInput_BridgeSpan.lua'),('test_picker.lua
 for name,arg in cases:
  result=subprocess.run(['node',str(runner),str(root/'tests'/name),str(arg)],capture_output=True,text=True,encoding='utf8')
  print(result.stdout,end='');assert result.returncode==0 and not result.stderr,result.stderr
-for name in ['test_clearance.py','test_unlock.py','test_damage.py']:
+for name in ['test_clearance.py','test_unlock.py','test_damage.py','test_damage_matrix.py']:
  subprocess.run([sys.executable,str(root/'tests'/name)],check=True)
-print('All six offline regression suites passed.')
-
 subprocess.run([sys.executable,str(root/'tests/test_localization.py')],check=True)
+subprocess.run([sys.executable,str(root/'tests/test_damage_art.py')],check=True)
+print('All seven offline regression suites, localization and damage-art package checks passed.',flush=True)

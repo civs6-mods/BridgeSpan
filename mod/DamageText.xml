@@ -1,0 +1,665 @@
+<?xml version='1.0' encoding='utf-8'?>
+<GameData>
+  <LocalizedText>
+    <Row Tag="LOC_BS_REPAIR_DESCRIPTION" Language="zh_Hans_CN">
+      <Text>修复这座桥的全部受损桥段，恢复桥面外观与通行能力。</Text>
+    </Row>
+    <Row Tag="LOC_BS_REPAIR_POSITION" Language="zh_Hans_CN">
+      <Text>修复{1_Num}格桥（{2_Num}, {3_Num}）</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S1_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S2_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S3_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S4_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S5_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S6_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S7_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S8_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S9_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S10_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S11_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S12_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S13_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S14_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S15_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S16_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S17_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S18_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S19_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S20_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S21_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S22_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S23_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S24_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S25_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S26_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S27_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S28_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S29_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S30_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S31_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S32_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S33_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S34_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S35_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S36_NAME" Language="zh_Hans_CN">
+      <Text>修复1格桥 #36</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S1_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S2_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S3_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S4_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S5_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S6_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S7_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S8_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S9_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S10_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S11_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S12_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S13_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S14_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S15_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S16_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S17_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S18_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S19_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S20_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S21_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S22_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S23_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S24_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S25_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S26_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S27_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S28_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S29_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S30_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S31_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S32_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S33_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S34_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S35_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S36_NAME" Language="zh_Hans_CN">
+      <Text>修复2格桥 #36</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S1_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S2_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S3_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S4_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S5_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S6_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S7_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S8_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S9_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S10_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S11_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S12_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S13_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S14_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S15_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S16_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S17_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S18_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S19_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S20_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S21_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S22_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S23_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S24_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S25_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S26_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S27_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S28_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S29_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S30_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S31_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S32_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S33_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S34_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S35_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S36_NAME" Language="zh_Hans_CN">
+      <Text>修复3格桥 #36</Text>
+    </Row>
+    <Row Tag="LOC_BS_REPAIR_DESCRIPTION" Language="en_US">
+      <Text>Repair all damaged segments of this bridge and restore its appearance and crossing.</Text>
+    </Row>
+    <Row Tag="LOC_BS_REPAIR_POSITION" Language="en_US">
+      <Text>Repair {1_Num}-tile bridge ({2_Num}, {3_Num})</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S1_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S2_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S3_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S4_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S5_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S6_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S7_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S8_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S9_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S10_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S11_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S12_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S13_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S14_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S15_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S16_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S17_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S18_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S19_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S20_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S21_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S22_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S23_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S24_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S25_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S26_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S27_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S28_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S29_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S30_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S31_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S32_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S33_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S34_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S35_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_1_S36_NAME" Language="en_US">
+      <Text>Repair 1-tile bridge #36</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S1_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S2_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S3_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S4_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S5_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S6_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S7_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S8_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S9_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S10_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S11_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S12_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S13_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S14_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S15_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S16_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S17_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S18_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S19_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S20_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S21_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S22_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S23_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S24_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S25_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S26_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S27_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S28_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S29_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S30_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S31_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S32_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S33_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S34_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S35_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_2_S36_NAME" Language="en_US">
+      <Text>Repair 2-tile bridge #36</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S1_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #1</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S2_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #2</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S3_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #3</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S4_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #4</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S5_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #5</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S6_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #6</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S7_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #7</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S8_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #8</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S9_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #9</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S10_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #10</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S11_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #11</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S12_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #12</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S13_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #13</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S14_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #14</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S15_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #15</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S16_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #16</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S17_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #17</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S18_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #18</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S19_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #19</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S20_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #20</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S21_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #21</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S22_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #22</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S23_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #23</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S24_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #24</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S25_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #25</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S26_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #26</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S27_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #27</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S28_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #28</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S29_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #29</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S30_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #30</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S31_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #31</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S32_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #32</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S33_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #33</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S34_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #34</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S35_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #35</Text>
+    </Row>
+    <Row Tag="LOC_PROJECT_BS_REPAIR_3_S36_NAME" Language="en_US">
+      <Text>Repair 3-tile bridge #36</Text>
+    </Row>
+  </LocalizedText>
+</GameData>

@@ -1,102 +1,111 @@
 <?xml version='1.0' encoding='utf-8'?>
 <AssetObjects..GameDependencyData>
-	<ID>
-		<name text="BridgeSpan" />
-		<id text="192184f2-cde2-436e-83d1-51546c2c6559" />
-	</ID>
-	<RequiredGameArtIDs>
-		<Element>
-			<name text="Expansion2" />
-			<id text="b1b63999-6b16-4dd2-a5b6-eb19794aa8ca" />
-		</Element>
-		<Element>
-			<name text="Civ6" />
-			<id text="cb2f71b7-843e-4af3-9ca7-992acda9c195" />
-		</Element>
-	</RequiredGameArtIDs>
-	<SystemDependencies>
-		<Element>
-			<ConsumerName text="WorldView_Translate" />
-			<ArtDefDependencyPaths>
-				<Element text="Districts.artdef" />
-				<Element text="Landmarks.artdef" />
-				<Element text="Buildings.artdef" />
-			</ArtDefDependencyPaths>
-			<LibraryDependencies />
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_Translate" />
-			<ArtDefDependencyPaths>
-				<Element text="Districts.artdef" />
-				<Element text="Landmarks.artdef" />
-				<Element text="Buildings.artdef" />
-			</ArtDefDependencyPaths>
-			<LibraryDependencies />
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="StrategicView_Sprite" />
-			<ArtDefDependencyPaths>
-				<Element text="Districts.artdef" />
-				<Element text="Landmarks.artdef" />
-				<Element text="Buildings.artdef" />
-			</ArtDefDependencyPaths>
-			<LibraryDependencies />
-			<LoadsLibraries>false</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="Landmarks" />
-			<ArtDefDependencyPaths>
-				<Element text="Districts.artdef" />
-				<Element text="Landmarks.artdef" />
-				<Element text="Buildings.artdef" />
-			</ArtDefDependencyPaths>
-			<LibraryDependencies><Element text="TileBase" /></LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-		<Element>
-			<ConsumerName text="WonderMovie" />
-			<ArtDefDependencyPaths>
-				<Element text="WonderMovie.artdef" />
-			</ArtDefDependencyPaths>
-			<LibraryDependencies>
-				<Element text="WonderMovie" />
-			</LibraryDependencies>
-			<LoadsLibraries>true</LoadsLibraries>
-		</Element>
-	</SystemDependencies>
-	<ArtDefDependencies>
-		<Element>
-			<ArtDefPath text="Districts.artdef" />
-			<ArtDefDependencyPaths>
-				<Element text="Landmarks.artdef" />
-				<Element text="Districts.artdef" />
-			</ArtDefDependencyPaths>
-		</Element>
-		<Element>
-			<ArtDefPath text="Landmarks.artdef" />
-			<ArtDefDependencyPaths>
-				<Element text="Landmarks.artdef" />
-			</ArtDefDependencyPaths>
-		</Element>
-		<Element>
-			<ArtDefPath text="Buildings.artdef" />
-			<ArtDefDependencyPaths />
-		</Element>
-		<Element>
-			<ArtDefPath text="WonderMovie.artdef" />
-			<ArtDefDependencyPaths>
-				<Element text="WonderMovie.artdef" />
-			</ArtDefDependencyPaths>
-		</Element>
-	</ArtDefDependencies>
-	<LibraryDependencies>
-		<Element>
-			<LibraryName text="WonderMovie" />
-			<PackageDependencies>
-				<Element text="BS_RegionalWorld.blp" />
-			</PackageDependencies>
-		</Element>
-	<Element><LibraryName text="TileBase" /><PackageDependencies><Element text="BS_AlignedWorksites.blp" /></PackageDependencies></Element></LibraryDependencies>
+  <ID>
+    <name text="BridgeSpan" />
+    <id text="192184f2-cde2-436e-83d1-51546c2c6559" />
+  </ID>
+  <RequiredGameArtIDs>
+    <Element>
+      <name text="Expansion2" />
+      <id text="b1b63999-6b16-4dd2-a5b6-eb19794aa8ca" />
+    </Element>
+    <Element>
+      <name text="Civ6" />
+      <id text="cb2f71b7-843e-4af3-9ca7-992acda9c195" />
+    </Element>
+  </RequiredGameArtIDs>
+  <SystemDependencies>
+    <Element>
+      <ConsumerName text="WorldView_Translate" />
+      <ArtDefDependencyPaths>
+        <Element text="Districts.artdef" />
+        <Element text="Landmarks.artdef" />
+        <Element text="Buildings.artdef" />
+      </ArtDefDependencyPaths>
+      <LibraryDependencies />
+      <LoadsLibraries>false</LoadsLibraries>
+    </Element>
+    <Element>
+      <ConsumerName text="StrategicView_Translate" />
+      <ArtDefDependencyPaths>
+        <Element text="Districts.artdef" />
+        <Element text="Landmarks.artdef" />
+        <Element text="Buildings.artdef" />
+      </ArtDefDependencyPaths>
+      <LibraryDependencies />
+      <LoadsLibraries>false</LoadsLibraries>
+    </Element>
+    <Element>
+      <ConsumerName text="StrategicView_Sprite" />
+      <ArtDefDependencyPaths>
+        <Element text="Districts.artdef" />
+        <Element text="Landmarks.artdef" />
+        <Element text="Buildings.artdef" />
+      </ArtDefDependencyPaths>
+      <LibraryDependencies />
+      <LoadsLibraries>false</LoadsLibraries>
+    </Element>
+    <Element>
+      <ConsumerName text="Landmarks" />
+      <ArtDefDependencyPaths>
+        <Element text="Districts.artdef" />
+        <Element text="Landmarks.artdef" />
+        <Element text="Buildings.artdef" />
+      </ArtDefDependencyPaths>
+      <LibraryDependencies>
+        <Element text="TileBase" />
+      </LibraryDependencies>
+      <LoadsLibraries>true</LoadsLibraries>
+    </Element>
+    <Element>
+      <ConsumerName text="WonderMovie" />
+      <ArtDefDependencyPaths>
+        <Element text="WonderMovie.artdef" />
+      </ArtDefDependencyPaths>
+      <LibraryDependencies>
+        <Element text="WonderMovie" />
+      </LibraryDependencies>
+      <LoadsLibraries>true</LoadsLibraries>
+    </Element>
+  </SystemDependencies>
+  <ArtDefDependencies>
+    <Element>
+      <ArtDefPath text="Districts.artdef" />
+      <ArtDefDependencyPaths>
+        <Element text="Landmarks.artdef" />
+        <Element text="Districts.artdef" />
+      </ArtDefDependencyPaths>
+    </Element>
+    <Element>
+      <ArtDefPath text="Landmarks.artdef" />
+      <ArtDefDependencyPaths>
+        <Element text="Landmarks.artdef" />
+      </ArtDefDependencyPaths>
+    </Element>
+    <Element>
+      <ArtDefPath text="Buildings.artdef" />
+      <ArtDefDependencyPaths />
+    </Element>
+    <Element>
+      <ArtDefPath text="WonderMovie.artdef" />
+      <ArtDefDependencyPaths>
+        <Element text="WonderMovie.artdef" />
+      </ArtDefDependencyPaths>
+    </Element>
+  </ArtDefDependencies>
+  <LibraryDependencies>
+    <Element>
+      <LibraryName text="WonderMovie" />
+      <PackageDependencies>
+        <Element text="BS_RegionalWorld.blp" />
+        <Element text="BS_DamagedWorld.blp" />
+      </PackageDependencies>
+    </Element>
+    <Element>
+      <LibraryName text="TileBase" />
+      <PackageDependencies>
+        <Element text="BS_AlignedWorksites.blp" />
+      </PackageDependencies>
+    </Element>
+  </LibraryDependencies>
 </AssetObjects..GameDependencyData>

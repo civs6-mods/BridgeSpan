@@ -10,10 +10,11 @@ Build bridges across coast and lake tiles in Civilization VI. Land units and tra
 
 ## Current release
 
-**v43 is publicly available.** [Subscribe on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919). The repository's `mod/` matches the verified v43 release package.
+**v44 is tested and awaiting Workshop publication.** The repository's `mod/` contains the verified v44 candidate. [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) remains on v43: Steam rejected the upload with `k_EResultInsufficientPrivilege` on 2026-11-17.
 
 - One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
 - Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
+- Pillage damages only the occupied segment and updates its appearance. A city repair project restores every damaged segment of the selected bridge.
 - Multiple valid layouts use numbered options with bridge and A/B shore previews; a single valid layout goes straight to confirmation.
 - Eligible feature and improvement removal is shown before construction. Cancelling leaves them intact.
 - Supports the Windows Steam edition of Civilization VI, Gathering Storm, single-player, including Harmony in Diversity. See the [verification record](docs/VERIFICATION.md) for DX11/DX12 coverage.
@@ -34,12 +35,13 @@ The bridge must cross consecutive coast or lake tiles belonging to the same prod
 
 | Path | Contents |
 | --- | --- |
-| `mod/` | Complete v43 installable package: Lua, SQL, UI, compiled art and native module |
+| `mod/` | Complete v44 installable package: Lua, SQL, UI, compiled art and native module |
+| `art/damage/` | Editable damaged Blender models, build scripts and resource templates for all three spans |
 | `native/` | Native C/C++ sources, MinHook sources and build entry point |
 | `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
 | `scripts/` | Package verification, offline tests and ZIP packaging |
 | `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
-| `release-manifest.json` | SHA-256 hashes for the 72 v43 release files |
+| `release-manifest.json` | SHA-256 hashes for the 93 v44 release files |
 
 Quick verification and packaging:
 
@@ -50,7 +52,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v43.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
+The ZIP is written to `dist/BridgeSpan-v44.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
 ## Diagnostics
 

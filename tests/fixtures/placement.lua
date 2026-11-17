@@ -8,12 +8,12 @@ local function event()
 end
 Events={};
 for _,name in ipairs({"DistrictAddedToMap","DistrictBuildProgressChanged","DistrictRemovedFromMap",
-    "LoadGameViewStateDone","DistrictPillaged","CityAddedToMap","CityRemovedFromMap","PlayerTurnActivated"}) do
+    "LoadGameViewStateDone","DistrictPillaged","CityAddedToMap","CityRemovedFromMap","CityTransfered","CityProjectCompleted","PlayerTurnActivated"}) do
     Events[name]=event();
 end
 GameEvents={BridgeSpan_DistrictPlan=event(),BuildingPillageStateChanged=event()};
 GameConfiguration={IsAnyMultiplayer=function() return false; end};
-GameInfo={Districts={},Buildings={},Terrains={TERRAIN_COAST={Index=1}},
+GameInfo={Districts={},Buildings={},Projects={},Terrains={TERRAIN_COAST={Index=1}},
     Technologies={BRIDGE_TECH={Index=1}}};
 local nextIndex=0;
 local function district(name)
@@ -29,6 +29,19 @@ end
 for n=1,2 do GameInfo.Districts["DISTRICT_BS_BRIDGE_"..n].PrereqTech="BRIDGE_TECH"; end
 for n=2,3 do district("DISTRICT_BS_SUPPORT_"..n); end
 for slot=1,2 do
+    for n=1,3 do
+        for d=0,5 do for mask=1,2^n-1 do
+            for _,legacy in ipairs({"","_L"})do
+                nextIndex=nextIndex+1;
+                GameInfo.Buildings["BUILDING_BS_DAMAGED_"..n.."_"..d.."_M"..mask.."_S"..slot..legacy]={Index=nextIndex};
+            end
+        end end
+        local permit="BUILDING_BS_REPAIR_"..n.."_S"..slot;
+        nextIndex=nextIndex+1;GameInfo.Buildings[permit]={Index=nextIndex};
+        local project="PROJECT_BS_REPAIR_"..n.."_S"..slot;
+        nextIndex=nextIndex+1;local row={Index=nextIndex,ProjectType=project};
+        GameInfo.Projects[project]=row;GameInfo.Projects[nextIndex]=row;
+    end
     local suffix=slot==1 and "" or "_S"..slot;
     for n=1,3 do for d=0,5 do for _,axis in ipairs({"","_AXIS"}) do
         local name="BUILDING_BS_DECK_"..n.."_"..d..axis..suffix;
@@ -44,6 +57,8 @@ DirectionTypes={DIRECTION_NORTHEAST=0,DIRECTION_EAST=1,DIRECTION_SOUTHEAST=2,
 local vectors={{1,-1},{1,0},{0,1},{-1,1},{-1,0},{0,-1}};
 local plots,byIndex,properties,locations,hasTech,pillagedBuildings;
 local city={GetID=function() return 7; end,GetOwner=function() return 0; end};
+function city:GetX()return -5;end
+function city:GetY()return -5;end
 function city:GetProperty(key) return properties[key]; end
 function city:SetProperty(key,value) properties[key]=value; end
 local otherCity={GetID=function() return 8; end,GetOwner=function() return 0; end};
@@ -105,6 +120,7 @@ local function plot(x,y,water)
 end
 local function setup(n,d)
     plots={}; byIndex={}; properties={}; locations={}; pillagedBuildings={};hasTech=true; bankCityNavigable=nil;
+    plot(-5,-5,false);
     local v=vectors[d+1];
     local start=plot(-v[1],-v[2],false);
     for i=0,n-1 do plot(i*v[1],i*v[2],true); end

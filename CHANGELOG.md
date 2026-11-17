@@ -1,5 +1,12 @@
 # Changelog
 
+## 44
+
+- Add damaged models for all three spans, with each damaged segment reflected independently across all six directions.
+- Replace per-segment repair entries with one city project per bridge. Completing it repairs every damaged segment of that bridge; other bridges are unaffected.
+- Include all external texture payloads in the package and verify their manifest entries. Editable Blender sources and the asset build pipeline are included in the repository.
+- Native crossing DLL and placement rules are unchanged. See [damaged-art and whole-bridge repair verification](docs/DAMAGED-BRIDGE-V44.md).
+
 ## 43
 
 - One pillage damages one bridge tile and pays once. The internal crossing component shares the district's damaged state.
