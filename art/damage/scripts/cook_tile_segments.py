@@ -4,6 +4,7 @@ import copy
 import json
 import shutil
 import subprocess
+import struct
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -26,6 +27,26 @@ def rename(tree, names):
             node.set("text", names[old])
 
 
+def surface_atlas(source, destination, normal):
+    """Filter the 2048px source to one 1024px mip. Color maps stay full size."""
+    import numpy as np
+
+    data = source.read_bytes()
+    header = bytearray(data[:128])
+    height, width = struct.unpack_from("<II", header, 12)
+    if data[:4] != b"DDS " or (height, width) != (2048, 2048) or len(data) != 128 + width * height * 4:
+        raise ValueError(f"Expected the original RGBA8 atlas: {source}")
+    pixels = np.frombuffer(data, dtype=np.uint8, offset=128).reshape(height, width, 4)
+    reduced = pixels.reshape(height // 2, 2, width // 2, 2, 4).mean(axis=(1, 3), dtype=np.float32)
+    if normal:
+        vectors = reduced[:, :, :3] / 127.5 - 1
+        lengths = np.linalg.norm(vectors, axis=2, keepdims=True)
+        reduced[:, :, :3] = (vectors / np.maximum(lengths, 1e-6) + 1) * 127.5
+    struct.pack_into("<III", header, 12, height // 2, width // 2, width * 2)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(header + np.clip(np.rint(reduced), 0, 255).astype(np.uint8).tobytes())
+
+
 def texture_descriptors(span):
     old = f"BS_Regional_{span}"
     new = f"BS_Damage_{span}"
@@ -36,8 +57,13 @@ def texture_descriptors(span):
         names[original + ".dds"] = target + ".dds"
         tex = ET.parse(ART / f"templates/Textures/{original}.tex")
         rename(tex, names)
-        assert (PANTRY / f"Textures/{target}.dds").is_file()
-        write(tex, PANTRY / f"Textures/{target}.tex")
+        source = PANTRY / f"Textures/{target}.dds"
+        assert source.is_file()
+        folder = PANTRY if suffix == "D" else BUILD / "compact-pantry"
+        if suffix != "D":
+            surface_atlas(source, folder / f"Textures/{target}.dds", normal=suffix == "N")
+            tex.find("m_Width").text = tex.find("m_Height").text = "1024"
+        write(tex, folder / f"Textures/{target}.tex")
     material = ET.parse(ART / f"templates/Materials/{old}.mtl")
     rename(material, names)
     write(material, PANTRY / f"Materials/{new}.mtl")
@@ -108,7 +134,7 @@ def cook(worksites, sdk, cooker):
     output = BUILD / "cooked"
     output.mkdir(exist_ok=True)
     call = [cooker / "Civ6AssetCooker_FinalRelease.exe", "--absolute_paths", "--no_mt", "--platform",
-            "Windows", "--pantry", PANTRY, worksites, sdk / "pantry", sdk / "DLC/Expansion2/pantry",
+            "Windows", "--pantry", BUILD / "compact-pantry", PANTRY, worksites, sdk / "pantry", sdk / "DLC/Expansion2/pantry",
             "--config", cooker / "Civ6.cfg", "--mode", "XLP", "--stewpot", output, path]
     result = subprocess.run(call, cwd=cooker, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     log = result.stdout.decode("utf-8", "replace")

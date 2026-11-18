@@ -1,3 +1,21 @@
+# v46 本地候选版验收
+
+2026-11-18，Windows Steam DX12 单人实测。升级基线为已公开的 v43。载入含局部损坏三格桥的 v43 测试存档后，三个桥格都处于受损状态。
+
+在同一座城市建造两座同跨度、同朝向的三格桥。分别破坏两桥，连续使用生产面板的原生区域维修入口。第一次完成后，一座桥的三格全部修复，另一座的三格仍然损坏。第二次完成后，两座桥均可通行。测试向生产队列补充了生产力。原版同城双运河测试也观察到每次修复一条。
+
+实机勇士从岸上进入健康桥后掠夺一次，国库从 1510 增至 2010。整座桥断开，另一座完好。重复掠夺按钮不可用，勇士可以退回岸上。另测岸上的勇士无法步行进入断桥，桨帆船仍可驶入断桥的中间水格。
+
+同一份大兴第 4 回合存档、相同模组组合，按玩家 0 的回合结束和重新激活日志计时，每次经过 39 个其他席位。日志时间戳精度为一秒。
+
+| 本地版本 | 第 4→5 回合 | 第 5→6 回合 | 第 6→7 回合 |
+| --- | ---: | ---: | ---: |
+| v44 | 39 秒 | 40 秒 | 39 秒 |
+| v45 | 4 秒 | 5 秒 | 4 秒 |
+| v46 | 4 秒 | 4 秒 | 4 秒 |
+
+数据库回归核实 108 个通行建筑类型和零个自定义维修项目。离线测试覆盖 132 组旧桥逐格损坏状态、六个朝向、存读档和归属变更。三个原生测试程序通过。v46 的回合耗时与单位实际移动均在 DX12 测量。
+
 # v44 受损外观与整桥修复 / Damaged art and whole-bridge repair
 
 2026-11-17: DX11 and DX12 each passed 132 native damage/repair combinations, actual Warrior pillage and bidirectional crossing on all three spans, and damaged save loading. All three span families were visually checked. See [scope and procedures](DAMAGED-BRIDGE-V44.md). The native DLL is unchanged from v43.

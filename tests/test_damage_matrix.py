@@ -24,20 +24,19 @@ for _,directional in ipairs({false,true})do for span=1,3 do for direction=0,5 do
                 else byIndex[index]:SetPillaged(true);end
             end
         end
-        assert(B.DamageMask(city,plan)==mask and plan.ArtMask==mask,"wrong damage subset/appearance");
-        for segment,index in ipairs(plan.Plots)do
-            local damaged=math.floor(mask/2^(segment-1))%2==1;
-            assert(byIndex[index]:IsPillaged()==damaged,"damage crossed segment boundary");
-            local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
-            assert(locations[marker]==index and buildings:IsPillaged(marker)==damaged,"wrong component state/location");
+        local function check(damaged)
+            local current=B.Records(city)[tostring(plan.Anchor)];
+            assert(current.Pillaged==damaged and not current.ArtMask);
+            for segment,index in ipairs(plan.Plots) do
+                assert(byIndex[index]:IsPillaged()==damaged,"mixed state within bridge");
+                local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
+                if damaged then assert(not buildings:HasBuilding(marker))
+                else assert(locations[marker]==index) end
+            end
         end
-        assert(buildings:HasBuilding(GameInfo.Buildings[B.RepairPermit(plan)].Index),"missing city repair permit");
-        Events.LoadGameViewStateDone.Fire();
-        assert(B.DamageMask(city,plan)==mask and plan.ArtMask==mask,"reload changed damage subset");
-        Events.CityProjectCompleted.Fire(0,7,GameInfo.Projects[B.RepairProject(plan)].Index);
-        assert(B.DamageMask(city,plan)==0 and plan.ArtMask==0,"whole-bridge repair incomplete");
-        assert(not buildings:HasBuilding(GameInfo.Buildings[B.RepairPermit(plan)].Index),"healthy repair project remains enabled");
-        for segment in ipairs(plan.Plots)do assert(B.HealthyMarker(city,plan,segment,buildings),"repair did not restore crossing component");end
+        check(true); assert(axes~=originalAxes,"broken bridge left open in pathfinding");
+        Events.LoadGameViewStateDone.Fire(); check(true);
+        byIndex[plan.Anchor]:SetPillaged(false); check(false);
         assert(axes==originalAxes,"damage/repair changed bridge entry restrictions");
         cases=cases+1;
     end
@@ -51,17 +50,15 @@ plot(-1,5,false);local second=plot(0,5,true);plot(1,5,true);plot(2,5,true);plot(
 second.district=anchor.district;second.complete=true;Events.DistrictAddedToMap.Fire(0,9,7,0,5,second.district);
 local b=B.Records(city)[tostring(second.index)];for _,i in ipairs(b.Plots)do byIndex[i].complete=true;end
 assert(a.Slot~=b.Slot);
-for _,plan in ipairs({a,b})do for _,i in ipairs(plan.Plots)do byIndex[i]:SetPillaged(true);end end
-Events.CityProjectCompleted.Fire(0,7,GameInfo.Projects[B.RepairProject(b)].Index);
-assert(B.DamageMask(city,a)==7 and B.DamageMask(city,b)==0,"repair affected another bridge");
-Events.CityProjectCompleted.Fire(0,7,GameInfo.Projects[B.RepairProject(a)].Index);
-assert(B.DamageMask(city,a)==0);
--- A project with no valid target is harmless, including a completion after removal.
 byIndex[a.Plots[2]]:SetPillaged(true);
-local old=anchor.district;anchor.district=-1;Events.DistrictRemovedFromMap.Fire(0,1,7,0,0,old);
-Events.CityProjectCompleted.Fire(0,7,GameInfo.Projects[B.RepairProject(a)].Index);
-assert(B.DamageMask(city,b)==0 and B.Records(city)[tostring(second.index)],"stale repair changed another bridge");
-print("DAMAGE_MATRIX_PASS: 132 damaged subsets, both district generations, six directions, reload, whole repair, two same-type bridges, stale completion");
+assert(not byIndex[b.Anchor]:IsPillaged());
+byIndex[b.Plots[3]]:SetPillaged(true);
+byIndex[b.Anchor]:SetPillaged(false);
+for _,i in ipairs(a.Plots)do assert(byIndex[i]:IsPillaged(),"repair leaked to the other bridge") end
+for _,i in ipairs(b.Plots)do assert(not byIndex[i]:IsPillaged()) end
+byIndex[a.Anchor]:SetPillaged(false);
+for _,i in ipairs(a.Plots)do assert(not byIndex[i]:IsPillaged()) end
+print("DAMAGE_MATRIX_PASS: 132 damaged subsets, both district generations, six directions, reload, whole repair, two same-type bridges repaired separately");
 '''
 out=root/'build/damage-matrix.lua';out.write_text(fixture+cases)
 r=subprocess.run(['node',str(repo/'node_modules/fengari-node-cli/src/lua-cli.js'),str(out),str(repo/'mod')],capture_output=True,text=True,encoding='utf8')

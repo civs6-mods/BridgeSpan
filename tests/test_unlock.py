@@ -51,15 +51,15 @@ for _,it in ipairs(data.DistrictItems) do
 end
 Players[0].GetTechs=techs;
 print("PASS: grouped production entries explain the missing technology");
--- Whole-bridge projects replace per-segment district repair entries.
+-- Only the root district exposes a native repair operation.
 local function districtItem(name,repair)
     return {Type=name,Hash=99,Disabled=false,Repair=repair,ToolTip="original"};
 end;
 baseItems={districtItem("DISTRICT_BS_SUPPORT_2",false),districtItem("DISTRICT_BS_SUPPORT_3",false),
     districtItem("DISTRICT_BS_SUPPORT_2",true),districtItem("DISTRICT_BS_SUPPORT_3",true),
     item(2,true),item(3,true)};
-data=GetData();assert(#data.DistrictItems==0,"per-segment repair or support construction exposed");
-print("PASS: bridge/support district repair rows replaced by whole-bridge projects");
+data=GetData();assert(#data.DistrictItems==2 and data.DistrictItems[1].Type=="DISTRICT_BS_BRIDGE_2" and data.DistrictItems[2].Type=="DISTRICT_BS_BRIDGE_3","expected only two root repairs");
+print("PASS: root repairs visible, support repair and construction hidden");
 '''
 out = root / 'build/unlock-acceptance.lua'
 out.write_text(fixture, encoding='utf-8')

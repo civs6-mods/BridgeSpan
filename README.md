@@ -10,11 +10,11 @@ Build bridges across coast and lake tiles in Civilization VI. Land units and tra
 
 ## Current release
 
-**v45 is a local performance candidate.** The current Workshop release is v43. On one early-game save the next three turns took 4, 5 and 4 seconds with v45 and 39, 40 and 39 seconds with v44.
+**v46 is a local candidate.** The current Workshop release is v43. v46 uses native district repair and registers 108 crossing buildings.
 
 - One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
 - Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
-- Pillage damages only the occupied segment and updates its appearance. A city repair project restores every damaged segment of the selected bridge.
+- Pillaging any segment disables the entire bridge. City production repairs one bridge per district repair order, like a Canal. Each bridge in the same city has its own condition. When upgrading a Workshop v43 save, a partially damaged bridge becomes damaged along its full span.
 - Multiple valid layouts use numbered options with bridge and A/B shore previews; a single valid layout goes straight to confirmation.
 - Eligible feature and improvement removal is shown before construction. Cancelling leaves them intact.
 - Supports the Windows Steam edition of Civilization VI, Gathering Storm, single-player, including Harmony in Diversity. See the [verification record](docs/VERIFICATION.md) for DX11/DX12 coverage.
@@ -35,13 +35,13 @@ The bridge must cross consecutive coast or lake tiles belonging to the same prod
 
 | Path | Contents |
 | --- | --- |
-| `mod/` | Complete v45 installable package: Lua, SQL, UI, compiled art and native module |
+| `mod/` | Complete v46 installable package: Lua, SQL, UI, compiled art and native module |
 | `art/damage/` | Editable damaged Blender models, build scripts and resource templates for all three spans |
 | `native/` | Native C/C++ sources, MinHook sources and build entry point |
 | `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
 | `scripts/` | Package verification, offline tests and ZIP packaging |
 | `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
-| `release-manifest.json` | SHA-256 hashes for the 71 v45 release files |
+| `release-manifest.json` | SHA-256 hashes for the 67 v46 release files |
 
 Quick verification and packaging:
 
@@ -52,7 +52,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v45.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
+The ZIP is written to `dist/BridgeSpan-v46.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
 ## Diagnostics
 

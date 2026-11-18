@@ -34,10 +34,7 @@ local function AdoptExisting(city)
     for _,plan in pairs(records) do Remember(city,plan); end
 end
 
-local HealthyMarker=B.HealthyMarker;
-
--- The internal Bridge=1 building is an engine component, not a second player
--- damage/repair target. Keep both native flags in one state per water tile.
+-- Each healthy bridge tile owns one native crossing component.
 local damageBusy=false;
 local function SegmentAt(city,plan,segment)
     local plot=Map.GetPlotByIndex(plan.Plots[segment]);
@@ -46,74 +43,6 @@ local function SegmentAt(city,plan,segment)
         or plot:GetDistrictType()~=B.District(plan,segment).Index then return; end
     return plot,district,GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
 end
-include("BridgeSpan_Damage");
-local SyncBridgeDamage=BridgeSpanInitializeDamage(B,SegmentAt,Remember,
-    function(value)damageBusy=value;end,function()return damageBusy;end);
-
-local function SetSegmentDamage(city,plan,segment,pillaged)
-    if damageBusy then return; end
-    local plot,district,marker=SegmentAt(city,plan,segment);
-    if not plot or not marker then return; end
-    damageBusy=true;
-    local ok,err=pcall(function()
-        local buildings=city:GetBuildings();
-        if pillaged then
-            if not district:IsPillaged() then district:SetPillaged(true); end
-            if buildings:HasBuilding(marker.Index) and not buildings:IsPillaged(marker.Index) then
-                buildings:SetPillaged(marker.Index,true);
-            end
-        elseif not district:IsPillaged() then
-            -- Simply clearing IsPillaged does not reliably restore the native
-            -- crossing flag. Rebuild this tile's component like save restoration.
-            if buildings:HasBuilding(marker.Index) then buildings:RemoveBuilding(marker.Index); end
-            city:GetBuildQueue():CreateIncompleteBuilding(marker.Index,plot:GetIndex(),100);
-            assert(buildings:GetBuildingLocation(marker.Index)==plot:GetIndex(),"Bridge repair marker misplaced");
-        end
-    end);
-    damageBusy=false;
-    if not ok then print("[BridgeSpanDistrict] Damage sync error",city:GetID(),plan.Anchor,segment,tostring(err)); end
-    if ok then SyncBridgeDamage(city,plan);end
-end
-
-local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
-    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() or not (pillaged==true or pillaged==1) then return; end
-    local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
-    if not city then return; end
-    for _,plan in pairs(B.Records(city)) do
-        for segment in ipairs(plan.Plots) do
-            local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
-            if marker and marker.Index==buildingType then SetSegmentDamage(city,plan,segment,true);return;end
-        end
-    end
-end
-
-local function DistrictDamageChanged(owner,districtID,cityID,x,y)
-    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() then return; end
-    local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
-    local plot=Map.GetPlot(x,y);
-    if not city or not plot then return; end
-    for _,plan in pairs(B.Records(city)) do
-        for segment,index in ipairs(plan.Plots) do
-            if index==plot:GetIndex() then
-                local _,district=SegmentAt(city,plan,segment);
-                if district then SetSegmentDamage(city,plan,segment,district:IsPillaged());end
-                return;
-            end
-        end
-    end
-end
-
-local function AdoptLegacyDamage(city,plan)
-    local buildings=city:GetBuildings();
-    for segment in ipairs(plan.Plots) do
-        local plot,district,marker=SegmentAt(city,plan,segment);
-        if plot and marker and (district:IsPillaged()
-            or buildings:HasBuilding(marker.Index) and buildings:IsPillaged(marker.Index)) then
-            SetSegmentDamage(city,plan,segment,true);
-        end
-    end
-end
-
 local function PublishBridgeAxes()
     if busy or GameConfiguration.IsAnyMultiplayer() then return; end
     local rows={};
@@ -127,12 +56,8 @@ local function PublishBridgeAxes()
                         local previous=Map.GetPlotByIndex(plan.Plots[segment-1] or plan.Start);
                         local nextPlot=Map.GetPlotByIndex(plan.Plots[segment+1] or plan.Finish);
                         local district=plot and CityManager.GetDistrictAt(plot);
-                        -- Axis restrictions describe the structure, not its health.
-                        -- A pillaged segment or missing marker must never release
-                        -- the other bridge decks to vanilla lateral movement.
-                        -- Removed segments lose their own record; surviving decks
-                        -- keep their original neighbours. Native movement still
-                        -- decides whether a damaged or missing deck is traversable.
+                        -- Two self references mark a closed deck for the movement rules.
+                        if plan.Pillaged then previous=plot; nextPlot=plot; end
                         if previous and nextPlot and B.BelongsToCity(plot,city)
                             and plot:IsWater() and district and district:IsComplete()
                             and plot:GetDistrictType()==B.District(plan,segment).Index then
@@ -147,6 +72,85 @@ local function PublishBridgeAxes()
     end
     table.sort(rows);
     Game.SetProperty("BS_NativeBridgeAxis_v1",table.concat(rows,";"));
+end
+
+-- Only a real pillage awards loot. Setting the sibling districts' flags and
+-- removing their crossing components changes map state without a unit action.
+local function SetBridgeDamage(city,plan,pillaged,reload)
+    if damageBusy then return 0; end
+    damageBusy=true;
+    local ok,count=pcall(function()
+        local buildings=city:GetBuildings();
+        local repaired=0;
+        for i,index in ipairs(plan.Plots) do
+            local plot,district,marker=SegmentAt(city,plan,i);
+            if plot and marker then
+                local location=buildings:GetBuildingLocation(marker.Index);
+                if district:IsPillaged()~=pillaged then district:SetPillaged(pillaged); end
+                if location==index and (pillaged or reload or buildings:IsPillaged(marker.Index)) then
+                    buildings:RemoveBuilding(marker.Index);
+                end
+                if not pillaged and not buildings:HasBuilding(marker.Index) then
+                    city:GetBuildQueue():CreateIncompleteBuilding(marker.Index,index,100);
+                    assert(buildings:GetBuildingLocation(marker.Index)==index,"Bridge crossing restored on wrong tile");
+                    repaired=repaired+1;
+                end
+            end
+        end
+        local records=B.Records(city);
+        local current=records[tostring(plan.Anchor)];
+        if current and current.Pillaged~=pillaged then
+            current.Pillaged=pillaged;
+            city:SetProperty(B.Key,records);
+            Remember(city,current);
+            if not reload then PublishBridgeAxes(); end
+        end
+        return repaired;
+    end);
+    damageBusy=false;
+    if not ok then error(count); end
+    return count;
+end
+
+local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
+    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() or not (pillaged==true or pillaged==1) then return; end
+    local row=GameInfo.Buildings[buildingType];
+    if not row or not row.BuildingType then return; end
+    local segment,slot=row.BuildingType:match("^BUILDING_BS_TILE_(%d+)_S(%d+)$");
+    if not segment then return; end
+    slot=tonumber(slot);
+    local player=Players[owner]; local city=player and player:GetCities():FindID(cityID);
+    if not city then return; end
+    for _,plan in pairs(B.Records(city)) do
+        if (plan.Slot or 1)==slot and plan.Plots[tonumber(segment)] and SegmentAt(city,plan,tonumber(segment)) then
+            SetBridgeDamage(city,plan,true);
+            return;
+        end
+    end
+end
+
+local function DistrictDamageChanged(owner,districtID,cityID,x,y)
+    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() then return; end
+    local plot=Map.GetPlot(x,y);
+    local row=plot and GameInfo.Districts[plot:GetDistrictType()];
+    if not row or not row.DistrictType:match("^DISTRICT_BS_") then return; end
+    local player=Players[owner]; local city=player and player:GetCities():FindID(cityID);
+    if not city then return; end
+    for _,plan in pairs(B.Records(city)) do
+        for segment,index in ipairs(plan.Plots) do
+            if index==plot:GetIndex() then
+                local _,district=SegmentAt(city,plan,segment);
+                if district then
+                    -- Only the visible root district can complete a whole repair.
+                    local damaged=district:IsPillaged() or (segment~=1 and plan.Pillaged==true);
+                    if plan.Pillaged~=damaged or district:IsPillaged()~=damaged then
+                        SetBridgeDamage(city,plan,damaged);
+                    end
+                end
+                return;
+            end
+        end
+    end
 end
 
 local function Prepare(owner,request)
@@ -251,8 +255,7 @@ local function UpgradeTiles(city,plan)
             local plot=Map.GetPlotByIndex(index);
             local district=plot and CityManager.GetDistrictAt(plot);
             if district and B.BelongsToCity(plot,city) and plot:GetDistrictType()==B.District(plan,i).Index then
-                local savedDamage=math.floor((plan.ArtMask or 0)/2^(i-1))%2==1;
-                tiles[tostring(i)]={Pillaged=district:IsPillaged() or savedDamage};
+                tiles[tostring(i)]={Pillaged=district:IsPillaged()};
             end
         end
         if not tiles["1"] then return; end
@@ -385,7 +388,6 @@ local function Removed(owner,districtID,cityID,x,y,districtType)
             if district then CityManager.DestroyDistrict(district); end
         end
     end
-    SyncBridgeDamage(city,plan);
 end
 
 local function RestoreBridge(city,plan)
@@ -394,23 +396,15 @@ local function RestoreBridge(city,plan)
     local ok,err=pcall(UpgradeTiles,city,plan);
     busy=wasBusy;damageBusy=wasDamageBusy;
     if not ok then error(err); end
-    AdoptLegacyDamage(city,plan);
+    -- Earlier versions stored partial tile damage and, on some saves, only the
+    -- native building carried the pillage flag. Adopt either as one broken bridge.
+    local damaged=plan.Pillaged==true;
     local buildings=city:GetBuildings();
-    local queue=city:GetBuildQueue();
-    local restored=0;
-    for i,index in ipairs(plan.Plots) do
-        local marker=HealthyMarker(city,plan,i,buildings);
-        if marker then
-            -- Saved buildings survive loading, but the native bridge crossing
-            -- flag on their water plots is only applied when they are built.
-            buildings:RemoveBuilding(marker.Index);
-            queue:CreateIncompleteBuilding(marker.Index,index,100);
-            assert(buildings:GetBuildingLocation(marker.Index)==index,"Bridge marker failed to reload");
-            restored=restored+1;
-        end
+    for i in ipairs(plan.Plots) do
+        local plot,district,marker=SegmentAt(city,plan,i);
+        if plot and (district:IsPillaged() or marker and buildings:IsPillaged(marker.Index)) then damaged=true; break; end
     end
-    SyncBridgeDamage(city,plan);
-    return restored;
+    return SetBridgeDamage(city,plan,damaged,true);
 end
 
 local function RestoreOnLoad()
@@ -461,7 +455,6 @@ Events.DistrictBuildProgressChanged.Add(Added);
 Events.DistrictRemovedFromMap.Add(Removed);
 Events.DistrictRemovedFromMap.Add(PublishBridgeAxes);
 Events.LoadGameViewStateDone.Add(RestoreOnLoad);
-Events.DistrictPillaged.Add(PublishBridgeAxes);
 Events.DistrictPillaged.Add(DistrictDamageChanged);
 GameEvents.BuildingPillageStateChanged.Add(BuildingDamageChanged);
 Events.CityAddedToMap.Add(CityAdded);

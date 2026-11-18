@@ -19,24 +19,24 @@ db.executescript("""
     CREATE TABLE Buildings_XP2(BuildingType PRIMARY KEY,Bridge);
     CREATE TABLE BuildingModifiers(BuildingType,ModifierId);
     INSERT INTO BuildingModifiers VALUES ('BUILDING_GOLDEN_GATE_BRIDGE','GOLDENGATE_GRANT_ROUTES');
-    CREATE TABLE Projects(ProjectType PRIMARY KEY,Name,ShortName,Description,Cost,CostProgressionModel,RequiredBuilding,AdvisorType);
+    CREATE TABLE Projects(ProjectType PRIMARY KEY,Name,ShortName,Description,Cost,CostProgressionModel,RequiredBuilding,AdvisorType,UnlocksFromEffect);
 """)
-for file in ("Districts.sql", "Worksites.sql", "Damage.sql"):
+for file in ("Districts.sql", "Worksites.sql"):
     db.executescript((mod / file).read_text(encoding="utf-8"))
 slots = range(1, 37)
 markers = {f"BUILDING_BS_TILE_{tile}_S{slot}" for tile in (1, 2, 3) for slot in slots}
-permits = {f"BUILDING_BS_REPAIR_{span}_S{slot}" for span in (1, 2, 3) for slot in slots}
+
 
 
 def values(sql):
     return {row[0] for row in db.execute(sql)}
 
 
-assert values("SELECT BuildingType FROM Buildings") == markers | permits
-assert values("SELECT Type FROM Types WHERE Kind='KIND_BUILDING'") == markers | permits
+assert values("SELECT BuildingType FROM Buildings") == markers
+assert values("SELECT Type FROM Types WHERE Kind='KIND_BUILDING'") == markers
 assert values("SELECT BuildingType FROM Buildings_XP2 WHERE Bridge=1") == markers
-assert values("SELECT RequiredBuilding FROM Projects") == permits
+assert not values("SELECT ProjectType FROM Projects")
 assert values("SELECT BuildingType FROM BuildingModifiers WHERE BuildingType LIKE 'BUILDING_BS_%'") == markers
 supports = {f"DISTRICT_BS_SUPPORT_{i}_N{n}_D{d}" for n in (2, 3) for d in range(6) for i in range(2, n + 1)}
 assert values("SELECT DistrictType FROM Districts WHERE DistrictType GLOB '*_N*_D*' AND MaxPerPlayer=0") == supports
-print("216 hidden buildings, 108 native repair targets and 18 oriented supports verified")
+print("108 crossing buildings, zero custom repair projects and 18 oriented supports verified")

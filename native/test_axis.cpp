@@ -97,6 +97,13 @@ int wmain(int argc, wchar_t** argv){
     assert(publishPayload(payload));
     const Snapshot* first=read_snapshot();
     assert(first && first->count==3);
+    assert(publishPayload("10,9,10,9,10,9;11,9,11,9,11,9"));
+    const Snapshot* broken=read_snapshot();
+    assert(closes_edge(broken,plot_key(9,9),plot_key(10,9)));
+    assert(closes_edge(broken,plot_key(10,9),plot_key(11,9)));
+    assert(!closes_edge(broken,plot_key(10,9),plot_key(9,9)));
+    assert(!closes_edge(broken,plot_key(10,9),plot_key(10,9)));
+    assert(publishPayload(payload));
     assert(!closes_edge(first,plot_key(109,23),plot_key(110,24)));
     assert(!closes_edge(first,plot_key(110,24),plot_key(110,25)));
     assert(!closes_edge(first,plot_key(111,26),plot_key(111,27)));

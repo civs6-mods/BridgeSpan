@@ -22,39 +22,6 @@ end
 function B.SupportName(span, direction, segment)
     return "DISTRICT_BS_SUPPORT_"..segment.."_N"..span.."_D"..direction;
 end
-function B.RepairProject(plan)
-    return "PROJECT_BS_REPAIR_"..plan.Span.."_S"..(plan.Slot or 1);
-end
-function B.RepairPermit(plan)
-    return "BUILDING_BS_REPAIR_"..plan.Span.."_S"..(plan.Slot or 1);
-end
-function B.DamageMask(city,plan)
-    local mask=0;
-    local buildings=city:GetBuildings();
-    for segment,index in ipairs(plan.Plots) do
-        local plot=Map.GetPlotByIndex(index);
-        local district=plot and CityManager.GetDistrictAt(plot);
-        local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
-        if district and B.BelongsToCity(plot,city) and district:IsComplete()
-            and plot:GetDistrictType()==B.District(plan,segment).Index
-            and (district:IsPillaged() or marker and buildings:IsPillaged(marker.Index)) then
-            mask=mask+2^(segment-1);
-        end
-    end
-    return math.floor(mask);
-end
-function B.HealthyMarker(city,plan,segment,buildings)
-    local index=plan.Plots[segment];
-    local plot=Map.GetPlotByIndex(index);
-    local district=plot and CityManager.GetDistrictAt(plot);
-    local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
-    if marker and B.BelongsToCity(plot,city) and plot:IsWater() and district
-        and plot:GetDistrictType()==B.District(plan,segment).Index and district:IsComplete()
-        and not district:IsPillaged() and buildings:GetBuildingLocation(marker.Index)==index
-        and not buildings:IsPillaged(marker.Index) then
-        return marker;
-    end
-end
 function B.District(plan, segment)
     local name;
     if segment==1 then name=plan.Root or "DISTRICT_BS_BRIDGE_"..plan.Span;

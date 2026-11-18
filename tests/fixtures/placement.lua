@@ -34,12 +34,9 @@ for n=2,3 do district("DISTRICT_BS_SUPPORT_"..n); end
 for slot=1,2 do
     for n=1,3 do
         nextIndex=nextIndex+1;
-        GameInfo.Buildings["BUILDING_BS_TILE_"..n.."_S"..slot]={Index=nextIndex};
-        local permit="BUILDING_BS_REPAIR_"..n.."_S"..slot;
-        nextIndex=nextIndex+1;GameInfo.Buildings[permit]={Index=nextIndex};
-        local project="PROJECT_BS_REPAIR_"..n.."_S"..slot;
-        nextIndex=nextIndex+1;local row={Index=nextIndex,ProjectType=project};
-        GameInfo.Projects[project]=row;GameInfo.Projects[nextIndex]=row;
+        local name="BUILDING_BS_TILE_"..n.."_S"..slot;
+        local marker={Index=nextIndex,BuildingType=name};
+        GameInfo.Buildings[name]=marker; GameInfo.Buildings[nextIndex]=marker;
     end
 
 end

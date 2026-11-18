@@ -73,6 +73,12 @@ static int closes_edge(const Snapshot *snapshot, Key from, Key to)
         return 0;
     const Deck *start = find_deck(snapshot, from);
     const Deck *end = find_deck(snapshot, to);
+    /* A pillaged deck publishes itself as both neighbours. Land formations may
+     * leave a damaged tile for a legal exit, but may not enter another one. */
+    if (end && end->previous == end->plot && end->next == end->plot)
+        return 1;
+    if (start && start->previous == start->plot && start->next == start->plot)
+        start = 0;
     return (start && to != start->previous && to != start->next)
         || (end && from != end->previous && from != end->next);
 }

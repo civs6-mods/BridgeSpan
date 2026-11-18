@@ -23,8 +23,7 @@ function GetData()
         local _,direction=B.Length(item.Type);
         local row=GameInfo.Districts[item.Type];
         local support=row and row.DistrictType:match("^DISTRICT_BS_SUPPORT_")~=nil;
-        local bridge=B.Length(item.Type)~=nil;
-        if not support and not (bridge and item.Repair) and (not direction or queue:HasBeenPlaced(item.Hash)) then
+        if not support and (item.Repair or not direction or queue:HasBeenPlaced(item.Hash)) then
             visible[#visible+1]=item;
         end
     end
@@ -66,23 +65,5 @@ function GetData()
         end
         data.DistrictItems=items;
     end
-    local repairs={};
-    for _,plan in pairs(B.Records(data.City))do
-        if plan.Complete and B.DamageMask(data.City,plan)>0 then repairs[B.RepairProject(plan)]=plan;end
-    end
-    local projects={};
-    for _,item in ipairs(data.ProjectItems or {})do
-        if item.Type and item.Type:match("^PROJECT_BS_REPAIR_")then
-            local plan=repairs[item.Type];
-            if plan then
-                local plot=Map.GetPlotByIndex(plan.Anchor);
-                item.Name=Locale.Lookup("LOC_BS_REPAIR_POSITION",plan.Span,plot:GetX(),plot:GetY());
-                item.ToolTip=item.Name.."[NEWLINE]"..Locale.Lookup("LOC_BS_REPAIR_DESCRIPTION");
-                item.IsRepeatable=false;
-                projects[#projects+1]=item;
-            end
-        else projects[#projects+1]=item;end
-    end
-    data.ProjectItems=projects;
     return data;
 end
