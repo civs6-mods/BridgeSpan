@@ -12,4 +12,5 @@ for name in ['test_clearance.py','test_unlock.py','test_damage.py','test_damage_
  subprocess.run([sys.executable,str(root/'tests'/name)],check=True)
 subprocess.run([sys.executable,str(root/'tests/test_localization.py')],check=True)
 subprocess.run([sys.executable,str(root/'tests/test_damage_art.py')],check=True)
+subprocess.run([sys.executable,str(root/'tests/test_bridge_registration.py')],check=True)
 print('All seven offline regression suites, localization and damage-art package checks passed.',flush=True)

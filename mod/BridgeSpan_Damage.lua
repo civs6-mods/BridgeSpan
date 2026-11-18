@@ -1,5 +1,5 @@
 -- Included in gameplay after the native district/component synchronization.
--- A damaged asset replaces the existing root component; it adds no pillage target.
+-- A district tile renders its own native Worked/Unworked/Pillaged state.
 function BridgeSpanInitializeDamage(B,SegmentAt,Remember,SetBusy,IsBusy)
 local function SaveAppearance(city,plan,mask)
     local records=B.Records(city);
@@ -10,26 +10,8 @@ end
 
 local function SyncAppearance(city,plan)
     if not plan.Complete then return;end
-    local plot,district,old=SegmentAt(city,plan,1);
-    if not plot or not old then return;end
     local mask=B.DamageMask(city,plan);
-    if mask~=(plan.ArtMask or 0) then
-        local copy={};for k,v in pairs(plan)do copy[k]=v;end;copy.ArtMask=mask;
-        local new=GameInfo.Buildings[B.Marker(copy,1,copy.Slot or 1)];
-        assert(new,"Missing damaged bridge asset type");
-        local buildings=city:GetBuildings();
-        local damaged=district:IsPillaged();
-        SetBusy(true);
-        local ok,err=pcall(function()
-            if buildings:HasBuilding(old.Index)then buildings:RemoveBuilding(old.Index);end
-            city:GetBuildQueue():CreateIncompleteBuilding(new.Index,plot:GetIndex(),100);
-            assert(buildings:GetBuildingLocation(new.Index)==plot:GetIndex(),"Damaged bridge misplaced");
-            if damaged then buildings:SetPillaged(new.Index,true);end
-            SaveAppearance(city,plan,mask);
-        end);
-        SetBusy(false);
-        if not ok then error(err);end
-    end
+    if mask~=(plan.ArtMask or 0) then SaveAppearance(city,plan,mask); end
 end
 
 local function SyncRepairPermit(city,plan)

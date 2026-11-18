@@ -10,7 +10,7 @@ Build bridges across coast and lake tiles in Civilization VI. Land units and tra
 
 ## Current release
 
-**v44 is tested and awaiting Workshop publication.** The repository's `mod/` contains the verified v44 candidate. [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) remains on v43: Steam rejected the upload with `k_EResultInsufficientPrivilege` on 2026-11-17.
+**v45 is a local performance candidate.** The current Workshop release is v43. On one early-game save the next three turns took 4, 5 and 4 seconds with v45 and 39, 40 and 39 seconds with v44.
 
 - One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
 - Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
@@ -35,13 +35,13 @@ The bridge must cross consecutive coast or lake tiles belonging to the same prod
 
 | Path | Contents |
 | --- | --- |
-| `mod/` | Complete v44 installable package: Lua, SQL, UI, compiled art and native module |
+| `mod/` | Complete v45 installable package: Lua, SQL, UI, compiled art and native module |
 | `art/damage/` | Editable damaged Blender models, build scripts and resource templates for all three spans |
 | `native/` | Native C/C++ sources, MinHook sources and build entry point |
 | `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
 | `scripts/` | Package verification, offline tests and ZIP packaging |
 | `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
-| `release-manifest.json` | SHA-256 hashes for the 93 v44 release files |
+| `release-manifest.json` | SHA-256 hashes for the 71 v45 release files |
 
 Quick verification and packaging:
 
@@ -52,7 +52,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v44.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
+The ZIP is written to `dist/BridgeSpan-v45.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
 
 ## Diagnostics
 

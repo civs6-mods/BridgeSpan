@@ -76,7 +76,7 @@ local function SetSegmentDamage(city,plan,segment,pillaged)
 end
 
 local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
-    if damageBusy or GameConfiguration.IsAnyMultiplayer() or not (pillaged==true or pillaged==1) then return; end
+    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() or not (pillaged==true or pillaged==1) then return; end
     local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
     if not city then return; end
     for _,plan in pairs(B.Records(city)) do
@@ -88,7 +88,7 @@ local function BuildingDamageChanged(owner,cityID,buildingType,pillaged)
 end
 
 local function DistrictDamageChanged(owner,districtID,cityID,x,y)
-    if damageBusy or GameConfiguration.IsAnyMultiplayer() then return; end
+    if busy or damageBusy or GameConfiguration.IsAnyMultiplayer() then return; end
     local player=Players[owner];local city=player and player:GetCities():FindID(cityID);
     local plot=Map.GetPlot(x,y);
     if not city or not plot then return; end
@@ -232,6 +232,68 @@ local function Mark(city,plan)
     end
 end
 
+-- The old saves carry the bridge identity and tile list in a city property.
+-- Upgrade only tiles that still belonged to that bridge. A support removed
+-- before saving must remain absent. Persist the repair state before replacing
+-- an old district so interrupted conversions can resume at the same plot.
+local function UpgradeTiles(city,plan)
+    if not plan.Complete or plan.TileArt then return; end
+    local records=B.Records(city);
+    local key=tostring(plan.Anchor);
+    local function save()
+        records[key]=plan;
+        city:SetProperty(B.Key,records);
+        Remember(city,plan);
+    end
+    if not plan.TileUpgrade then
+        local tiles={};
+        for i,index in ipairs(plan.Plots) do
+            local plot=Map.GetPlotByIndex(index);
+            local district=plot and CityManager.GetDistrictAt(plot);
+            if district and B.BelongsToCity(plot,city) and plot:GetDistrictType()==B.District(plan,i).Index then
+                local savedDamage=math.floor((plan.ArtMask or 0)/2^(i-1))%2==1;
+                tiles[tostring(i)]={Pillaged=district:IsPillaged() or savedDamage};
+            end
+        end
+        if not tiles["1"] then return; end
+        plan.TileUpgrade=tiles;
+        save();
+    end
+    local buildings=city:GetBuildings();
+    local queue=city:GetBuildQueue();
+    for i,index in ipairs(plan.Plots) do
+        local tile=plan.TileUpgrade[tostring(i)];
+        if tile then
+            local plot=Map.GetPlotByIndex(index);
+            assert(B.BelongsToCity(plot,city),"Saved bridge tile has changed ownership");
+            local old=B.District(plan,i).Index;
+            local target=i==1 and B.PlacementDistrict(plan) or GameInfo.Districts[B.SupportName(plan.Span,plan.Direction,i)];
+            if plot:GetDistrictType()~=target.Index then
+                if plot:GetDistrictType()==old then
+                    CityManager.DestroyDistrict(CityManager.GetDistrictAt(plot));
+                end
+                assert(plot:GetDistrictType()==-1,"Saved bridge tile occupied by a different district");
+                queue:CreateIncompleteDistrict(target.Index,index,100);
+            end
+            assert(plot:GetDistrictType()==target.Index,"Saved bridge district was misplaced");
+            local marker=GameInfo.Buildings[B.Marker(plan,i,plan.Slot or 1)];
+            if buildings:GetBuildingLocation(marker.Index)~=index then
+                assert(not buildings:HasBuilding(marker.Index),"Saved bridge slot is already occupied");
+                queue:CreateIncompleteBuilding(marker.Index,index,100);
+            end
+            assert(buildings:GetBuildingLocation(marker.Index)==index,"Saved bridge component was misplaced");
+            if tile.Pillaged then
+                CityManager.GetDistrictAt(plot):SetPillaged(true);
+                buildings:SetPillaged(marker.Index,true);
+            end
+        end
+    end
+    plan.TileArt=true;
+    plan.Root=B.PlacementDistrict(plan).DistrictType;
+    plan.TileUpgrade=nil;
+    save();
+end
+
 local function Added(owner,districtID,cityID,x,y,districtType)
     local span,direction=B.Length(districtType);
     if busy or not span then return; end
@@ -290,6 +352,7 @@ local function Added(owner,districtID,cityID,x,y,districtType)
             plan.Complete=true;
             city:SetProperty(B.Key,records);
             Remember(city,plan);
+            UpgradeTiles(city,plan);
             completed=true;
             print("[BridgeSpanDistrict] Completed",owner,cityID,span,plan.Direction,anchorIndex,plan.Slot or 1);
         end
@@ -326,6 +389,11 @@ local function Removed(owner,districtID,cityID,x,y,districtType)
 end
 
 local function RestoreBridge(city,plan)
+    local wasBusy,wasDamageBusy=busy,damageBusy;
+    busy=true;damageBusy=true;
+    local ok,err=pcall(UpgradeTiles,city,plan);
+    busy=wasBusy;damageBusy=wasDamageBusy;
+    if not ok then error(err); end
     AdoptLegacyDamage(city,plan);
     local buildings=city:GetBuildings();
     local queue=city:GetBuildQueue();
@@ -370,7 +438,7 @@ local function CityAdded(owner,cityID)
     local player=Players[owner];
     local city=player and player:GetCities():FindID(cityID);
     if city then AdoptExisting(city); end
-    PublishBridgeAxes();
+    if next(knownPlans) then PublishBridgeAxes(); end
 end
 
 local function Transferred(owner,cityID)
@@ -399,5 +467,11 @@ GameEvents.BuildingPillageStateChanged.Add(BuildingDamageChanged);
 Events.CityAddedToMap.Add(CityAdded);
 Events.CityTransfered.Add(Transferred);
 Events.CityRemovedFromMap.Add(PublishBridgeAxes);
-Events.PlayerTurnActivated.Add(PublishBridgeAxes);
+-- District and transfer events publish structural changes immediately. Keep a
+-- reconciliation pass on the human turn for ownership changes from other mods.
+-- A fresh map with no bridge records has nothing to reconcile.
+Events.PlayerTurnActivated.Add(function(owner)
+    local player=Players[owner];
+    if next(knownPlans) and player and player:IsHuman() then PublishBridgeAxes(); end
+end);
 print("[BridgeSpanDistrict] Multiple city bridges enabled");

@@ -24,33 +24,24 @@ end
 district("DISTRICT_CANAL");
 for n=1,3 do
     district("DISTRICT_BS_BRIDGE_"..n);
-    for d=0,5 do district("DISTRICT_BS_BRIDGE_"..n.."_D"..d); end
+    for d=0,5 do
+        district("DISTRICT_BS_BRIDGE_"..n.."_D"..d);
+        for tile=2,n do district("DISTRICT_BS_SUPPORT_"..tile.."_N"..n.."_D"..d); end
+    end
 end
 for n=1,2 do GameInfo.Districts["DISTRICT_BS_BRIDGE_"..n].PrereqTech="BRIDGE_TECH"; end
 for n=2,3 do district("DISTRICT_BS_SUPPORT_"..n); end
 for slot=1,2 do
     for n=1,3 do
-        for d=0,5 do for mask=1,2^n-1 do
-            for _,legacy in ipairs({"","_L"})do
-                nextIndex=nextIndex+1;
-                GameInfo.Buildings["BUILDING_BS_DAMAGED_"..n.."_"..d.."_M"..mask.."_S"..slot..legacy]={Index=nextIndex};
-            end
-        end end
+        nextIndex=nextIndex+1;
+        GameInfo.Buildings["BUILDING_BS_TILE_"..n.."_S"..slot]={Index=nextIndex};
         local permit="BUILDING_BS_REPAIR_"..n.."_S"..slot;
         nextIndex=nextIndex+1;GameInfo.Buildings[permit]={Index=nextIndex};
         local project="PROJECT_BS_REPAIR_"..n.."_S"..slot;
         nextIndex=nextIndex+1;local row={Index=nextIndex,ProjectType=project};
         GameInfo.Projects[project]=row;GameInfo.Projects[nextIndex]=row;
     end
-    local suffix=slot==1 and "" or "_S"..slot;
-    for n=1,3 do for d=0,5 do for _,axis in ipairs({"","_AXIS"}) do
-        local name="BUILDING_BS_DECK_"..n.."_"..d..axis..suffix;
-        nextIndex=nextIndex+1; GameInfo.Buildings[name]={Index=nextIndex};
-    end end end
-    for n=2,3 do
-        nextIndex=nextIndex+1;
-        GameInfo.Buildings["BUILDING_BS_SUPPORT_"..n..suffix]={Index=nextIndex};
-    end
+
 end
 DirectionTypes={DIRECTION_NORTHEAST=0,DIRECTION_EAST=1,DIRECTION_SOUTHEAST=2,
     DIRECTION_SOUTHWEST=3,DIRECTION_WEST=4,DIRECTION_NORTHWEST=5};

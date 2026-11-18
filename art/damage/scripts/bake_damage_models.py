@@ -14,11 +14,12 @@ import numpy as np
 parser = argparse.ArgumentParser()
 parser.add_argument("tiles", type=int, choices=(1, 2, 3))
 parser.add_argument("--regional", action="store_true")
+parser.add_argument("--segments", action="store_true", help="Export tile-centred intact and pillaged geometry")
 args = parser.parse_args(sys.argv[sys.argv.index("--") + 1:])
 tiles = args.tiles
 art = Path(__file__).resolve().parents[1]
 theme = "regional" if args.regional else "industrial"
-root = art / "build"
+root = art / ("build/segments" if args.segments else "build")
 textures = root / "pantry" / "Textures"
 exports = root / "exports"
 for directory in (textures, exports, root / "pantry" / "Geometries"):
@@ -155,9 +156,19 @@ mesh.materials.append(palette)
 for polygon in mesh.polygons:
     polygon.material_index = 0
 
-for mask in range(1, 1 << tiles):
+if args.segments:
+    # Each water tile draws its own district state. The same pair is used for
+    # every city and slot, irrespective of damage elsewhere along the bridge.
+    variants = [(segment, mask) for segment in range(1, tiles + 1)
+                for mask in (0, 1 << (segment - 1))]
+else:
+    variants = [(None, mask) for mask in range(1, 1 << tiles)]
+for tile, mask in variants:
     for direction in range(6):
         name = f"BS_Damage_{tiles}_{direction}_M{mask}"
+        if tile is not None:
+            state_name = "Pillaged" if mask else "Intact"
+            name = f"BS_Segment_{tiles}_{direction}_{tile}_{state_name}"
         data = mesh.copy()
         bm=bmesh.new();bm.from_mesh(data);bm.verts.ensure_lookup_table()
         remove=[]
@@ -168,7 +179,7 @@ for mask in range(1, 1 << tiles):
                 if group_name.startswith("S") and "_" in group_name:
                     segment,state=group_name[1:].split("_",1)
                     wanted="Damaged" if mask & (1 << (int(segment)-1)) else "Intact"
-                    if state==wanted:keep=True
+                    if state == wanted and (tile is None or int(segment) == tile): keep=True
             if not keep:remove.append(bm.verts[vertex.index])
         bmesh.ops.delete(bm,geom=remove,context="VERTS")
         bm.to_mesh(data);bm.free()
@@ -176,7 +187,8 @@ for mask in range(1, 1 << tiles):
         bpy.context.collection.objects.link(obj)
         rotation = Matrix.Rotation(math.radians((1 - direction) * 60), 3, "Z")
         # Model units and first-water-tile offset match the existing placement path.
-        transform = rotation.to_4x4() @ Matrix.Translation(((tiles - 1) * 320, 0, 0)) @ Matrix.Scale(64, 4)
+        offset = (tiles - 1) * 320 - ((tile or 1) - 1) * 640
+        transform = rotation.to_4x4() @ Matrix.Translation((offset, 0, 0)) @ Matrix.Scale(64, 4)
         data.transform(transform)
         bpy.ops.object.select_all(action="DESELECT")
         bpy.ops.object.armature_add()

@@ -17,13 +17,10 @@ function B.PlacementDistrict(plan)
     return GameInfo.Districts["DISTRICT_BS_BRIDGE_"..plan.Span.."_D"..plan.Direction];
 end
 function B.Marker(plan, segment, slot)
-    if segment==1 and (plan.ArtMask or 0)>0 then
-        return "BUILDING_BS_DAMAGED_"..plan.Span.."_"..plan.Direction.."_M"..string.format("%d",plan.ArtMask).."_S"..slot..(plan.Root and "" or "_L");
-    end
-    local family=segment==1 and ("BUILDING_BS_DECK_"..plan.Span.."_"..plan.Direction)
-        or ("BUILDING_BS_SUPPORT_"..segment);
-    if segment==1 and plan.Root then family=family.."_AXIS"; end
-    return slot==1 and family or (family.."_S"..slot);
+    return "BUILDING_BS_TILE_"..segment.."_S"..slot;
+end
+function B.SupportName(span, direction, segment)
+    return "DISTRICT_BS_SUPPORT_"..segment.."_N"..span.."_D"..direction;
 end
 function B.RepairProject(plan)
     return "PROJECT_BS_REPAIR_"..plan.Span.."_S"..(plan.Slot or 1);
@@ -59,7 +56,10 @@ function B.HealthyMarker(city,plan,segment,buildings)
     end
 end
 function B.District(plan, segment)
-    local name=segment==1 and (plan.Root or "DISTRICT_BS_BRIDGE_"..plan.Span) or ("DISTRICT_BS_SUPPORT_"..segment);
+    local name;
+    if segment==1 then name=plan.Root or "DISTRICT_BS_BRIDGE_"..plan.Span;
+    elseif plan.TileArt then name=B.SupportName(plan.Span,plan.Direction,segment);
+    else name="DISTRICT_BS_SUPPORT_"..segment; end
     return GameInfo.Districts[name];
 end
 function B.BelongsToCity(plot, city)
@@ -162,7 +162,7 @@ function B.Find(city,anchor,n,d,allowRoot)
             if span~=n or (direction and direction~=d) then return; end
             if direction then root=GameInfo.Districts[district].DistrictType; end
         else
-            local row=GameInfo.Districts[i==1 and ("DISTRICT_BS_BRIDGE_"..n.."_D"..d) or ("DISTRICT_BS_SUPPORT_"..i)];
+            local row=GameInfo.Districts[i==1 and ("DISTRICT_BS_BRIDGE_"..n.."_D"..d) or B.SupportName(n,d,i)];
             if not B.CanClearPlot(city,plot,row) then return;end
         end
         clearance[tostring(plot:GetIndex())]={Feature=plot:GetFeatureType(),Improvement=plot:GetImprovementType()};
@@ -173,7 +173,7 @@ function B.Find(city,anchor,n,d,allowRoot)
     if hasBridgeheadCliff(start,anchor,d)
         or hasBridgeheadCliff(plot,Map.GetPlotByIndex(plots[n]),(d+3)%6) then return; end
     return {Owner=owner,CityID=city:GetID(),Anchor=anchor:GetIndex(),Span=n,Direction=d,Plots=plots,
-        Start=start:GetIndex(),Finish=plot:GetIndex(),Root=root,Clearance=clearance};
+        Start=start:GetIndex(),Finish=plot:GetIndex(),Root=root,Clearance=clearance,TileArt=root~=nil};
 end
 function B.Options(city,anchor,n,allowRoot)
     local result,seen={},{};

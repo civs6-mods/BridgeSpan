@@ -21,7 +21,8 @@ function GetData()
     local visible={};
     for _,item in ipairs(data.DistrictItems) do
         local _,direction=B.Length(item.Type);
-        local support=item.Type=="DISTRICT_BS_SUPPORT_2" or item.Type=="DISTRICT_BS_SUPPORT_3";
+        local row=GameInfo.Districts[item.Type];
+        local support=row and row.DistrictType:match("^DISTRICT_BS_SUPPORT_")~=nil;
         local bridge=B.Length(item.Type)~=nil;
         if not support and not (bridge and item.Repair) and (not direction or queue:HasBeenPlaced(item.Hash)) then
             visible[#visible+1]=item;

@@ -5,36 +5,28 @@ materials, camera and lights. Toggle the `Sxx_Intact` and `Sxx_Damaged` collecti
 to preview a particular segment combination. Sources and generated art are original
 BridgeSpan work. Firaxis SDK binaries are required locally and are not included.
 
-The runtime replaces the existing root bridge component with a matching damage-mask
-variant. Supports retain their individual damage flags. No extra pillage target is
-added on a bridge. Legacy and directional districts have separate component
-bindings so each rendered asset remains attached to its actual bridge district.
+Each completed water tile draws its own intact or pillaged geometry through its
+district TileBase. The root TileBase also contains the oriented construction
+worksite. The 36 TileBase variants cover all spans, directions and tile positions.
+The 108 crossing components and 108 native repair permits are shared across the
+visual states. City properties retain each bridge's slot and repair target.
 
-## Build
+## Build v45 tile art
 
-1. Run `blender -b -t 6 --python scripts/bake_damage_models.py -- N --regional`
-   for N = 1, 2, 3. This bakes one 2048 px atlas per span and exports all 66 damaged
-   combinations across six directions. Exactly one UV layer, `UV0`, is exported.
-2. In Windows PowerShell 5.1 run `scripts/convert_bridges.ps1 -ArtRoot <absolute
-   damage/build> -SDKAssetEditor <SDK/AssetModTools/AssetEditor>`. The SDK converts
-   FBX to native FGX; the inspector records authoritative mesh counts and groups.
-3. Run `python scripts/prepare_damage_assets.py`. This generates Pantry descriptors
-   from the supplied templates and validates SDK metadata.
-4. Cook `build/pantry/XLPs/BS_DamagedWorld.xlp` with Civ6AssetCooker, using this
-   Pantry plus the base-game and Gathering Storm SDK Pantries. Require a successful
-   cook with no missing entries. Run `python scripts/stage_damage_assets.py`
-   to copy the BLP and its 16 external `SHARED_DATA` texture payloads to the mod.
-   The BLP alone does not contain these textures and will render corrupted colors.
-5. Run `python scripts/prepare_damage_data.py` to regenerate SQL, localization,
-   icon and ArtDef bindings. Run `python ../../scripts/test.py` from this directory
-   using the repository's installed Node dependencies.
+1. For each span from 1 to 3 run Blender with
+   `-b -t 6 --python scripts/bake_damage_models.py -- N --regional --segments`.
+   This exports both native states of each tile and bakes one texture atlas per
+   span. Generated sources are under `build/segments/`.
+2. In Windows PowerShell 5.1 run `scripts/convert_bridges.ps1 -ArtRoot
+   <absolute build/segments path> -SDKAssetEditor <SDK/AssetModTools/AssetEditor>`.
+3. Run `python scripts/cook_tile_segments.py <aligned-worksite-pantry>
+   <SDK Assets/Civ6> <SDK/AssetModTools/Cooker> --stage`. The original
+   aligned worksite Pantry lives in the BridgeSpan regional art workspace under
+   `art/regional/construction/aligned-game/pantry`. The build combines its
+   construction geometry with the new bridge sections. It checks the cook log
+   for fallback assets and checks the output file set against the mod manifest.
+4. Run `python scripts/test.py` at the repository root. Before packaging a new
+   release, refresh `release-manifest.json` from the reviewed installation files.
 
-`build_damage_models.py` can regenerate the editable models from the earlier
-approved regional sources via `--source-root`. Rebuilding the game assets only
-requires the committed `source/` files, not that earlier authoring workspace.
-
-The generated bindings support 36 simultaneous bridges per city, matching the
-existing component slots. A native city project repairs all damaged segments of
-one bridge for 40% of its original base production cost (rounded up), with game
-speed scaling supplied by the engine. A hidden city-center permit limits each
-project to its owning city and is removed when the bridge is healthy.
+The earlier whole-bridge art generators in this directory reproduce the v44
+assets from that version's checkout. Their SQL and ArtDef bindings belong to v44.

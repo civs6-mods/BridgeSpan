@@ -10,7 +10,7 @@
 
 ## 当前版本
 
-**v44 已通过测试，等待工坊发布。** 本分支的 `mod/` 为已验证的 v44 候选包。[Steam 工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919)仍为 v43：2026-11-17 上传时 Steam 返回 `k_EResultInsufficientPrivilege`，尚未完成公开发布。
+**v45 为本地性能优化候选版。** 工坊当前版本为 v43。同一个开局存档连续三个回合，v45 用时 4、5、4 秒，v44 用时 39、40、39 秒。
 
 - 1 格石桥，以及 2 格、3 格跨海大桥，由城市生产；同一城市可以建多座。
 - 陆军和商人只从桥的两端上下桥；船只可以经过桥身水格。
@@ -35,13 +35,13 @@
 
 | 路径 | 内容 |
 | --- | --- |
-| `mod/` | v44 完整可安装包，含 Lua、SQL、界面、编译美术资源和原生模块 |
+| `mod/` | v45 完整可安装包，含 Lua、SQL、界面、编译美术资源和原生模块 |
 | `art/damage/` | 三种跨度的可编辑 Blender 受损模型、构建脚本和资源模板 |
 | `native/` | 对应的原生 C/C++ 源码、MinHook 源码及构建入口 |
 | `tests/` | 选址、方案面板、清理、科技解锁、损坏与健康检查的离线回归 |
 | `scripts/` | 包完整性验证、离线测试与 ZIP 打包 |
 | `workshop/` | 工坊中英文说明、封面、截图及顺序 |
-| `release-manifest.json` | v44 的 93 个发布文件 SHA-256 清单 |
+| `release-manifest.json` | v45 的 71 个发布文件 SHA-256 清单 |
 
 快速验证与打包：
 
@@ -52,7 +52,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-生成 `dist/BridgeSpan-v44.zip`。开发者重编原生模块的环境要求和命令见[开发说明](docs/DEVELOPMENT.md)。
+生成 `dist/BridgeSpan-v45.zip`。开发者重编原生模块的环境要求和命令见[开发说明](docs/DEVELOPMENT.md)。
 
 ## 问题诊断
 

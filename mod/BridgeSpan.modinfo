@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="44">
+<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="45">
   <Properties>
     <Name>LOC_BS_MOD_NAME</Name>
     <Description>LOC_BS_MOD_DESCRIPTION</Description>
@@ -153,10 +153,8 @@
     </UpdateIcons>
   </InGameActions>
   <Files>
-    <File>ArtDefs/Buildings.artdef</File>
     <File>ArtDefs/Districts.artdef</File>
     <File>ArtDefs/Landmarks.artdef</File>
-    <File>ArtDefs/WonderMovie.artdef</File>
     <File>BridgeSpan.dep</File>
     <File>BridgeSpan_DistrictCommon.lua</File>
     <File>BridgeSpan_DistrictGameplay.lua</File>
@@ -170,48 +168,10 @@
     <File>Districts.sql</File>
     <File>Icons.sql</File>
     <File>LICENSE.txt</File>
-    <File>Platforms/Windows/BLPs/BS_RegionalWorld.blp</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_1_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_A</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_2_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_A</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_3_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Regional_AO</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_1_D_null</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_2_D_null</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Regional_3_D_null</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
     <File>ProductionPanel_BridgeSpan.lua</File>
     <File>Text.xml</File>
     <File>Unlock.sql</File>
     <File>WorldInput_BridgeSpan.lua</File>
-    <File>Platforms/Windows/BLPs/BS_AlignedWorksites.blp</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_M</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N0</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N1</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_BaseColor</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_G</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_1_D_null</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_2_D_null</File>
-    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_3_D_null</File>
     <File>Worksites.sql</File>
     <File>WorksiteIcons.sql</File>
     <File>CoreConfig.sql</File>
@@ -228,7 +188,19 @@
     <File>DamageIcons.sql</File>
     <File>DamageText.xml</File>
     <File>BridgeSpan_Damage.lua</File>
-    <File>Platforms/Windows/BLPs/BS_DamagedWorld.blp</File>
+    <File>Platforms/Windows/BLPs/BS_BridgeTiles.blp</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_1_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_2_N1</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_M</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N0</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_AlignedWorksite_3_N1</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_G</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_M</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_1_N0</File>
@@ -242,9 +214,15 @@
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_N0</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_3_N1</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_BS_Damage_AO</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_BaseColor</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_Burn_G</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_1_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_2_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_AlignedWorksite_3_D_null</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_1_D_null</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_2_D_null</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_3_D_null</File>
+    <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
   </Files>
   <FrontEndActions>
     <UpdateDatabase id="BS_CoreConfig">
