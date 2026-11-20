@@ -9,6 +9,11 @@ include("BridgeSpan_DistrictCommon");
 
 local baseGetData=GetData;
 local B=BridgeSpanDistrict;
+local baseComposeDistrictForPurchase=ComposeDistrictForPurchase;
+function ComposeDistrictForPurchase(row,...)
+    if B.IsBridgeDistrict(row) then return false,nil; end
+    return baseComposeDistrictForPurchase(row,...);
+end
 local function isSeaBridge(item)
     return not item.Repair and (item.Type=="DISTRICT_BS_BRIDGE_2" or item.Type=="DISTRICT_BS_BRIDGE_3");
 end

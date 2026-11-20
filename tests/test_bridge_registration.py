@@ -33,6 +33,9 @@ def values(sql):
 
 
 assert values("SELECT BuildingType FROM Buildings") == markers
+assert values("""SELECT DistrictType FROM Districts WHERE DistrictType GLOB 'DISTRICT_BS_*'
+                 EXCEPT SELECT PageId FROM CivilopediaPageExcludes WHERE SectionId='DISTRICTS'"""
+              ) == {"DISTRICT_BS_BRIDGE_1", "DISTRICT_BS_BRIDGE_2"}
 assert values("SELECT Type FROM Types WHERE Kind='KIND_BUILDING'") == markers
 assert values("SELECT BuildingType FROM Buildings_XP2 WHERE Bridge=1") == markers
 assert not values("SELECT ProjectType FROM Projects")
@@ -40,3 +43,8 @@ assert values("SELECT BuildingType FROM BuildingModifiers WHERE BuildingType LIK
 supports = {f"DISTRICT_BS_SUPPORT_{i}_N{n}_D{d}" for n in (2, 3) for d in range(6) for i in range(2, n + 1)}
 assert values("SELECT DistrictType FROM Districts WHERE DistrictType GLOB '*_N*_D*' AND MaxPerPlayer=0") == supports
 print("108 crossing buildings, zero custom repair projects and 18 oriented supports verified")
+
+# The mod must allow the ruleset (or another mod) to choose its game core.
+assert not list(mod.rglob("*.dll")), "Unexpected custom game core in the package"
+for sql in mod.glob("*.sql"):
+    assert not re.search(r"\bGameCores\b", sql.read_text(encoding="utf-8"), re.I), sql

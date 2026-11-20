@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="46">
+<Mod id="6fc747c1-f24b-4c0d-a4c2-91b84f99f762" version="51">
   <Properties>
     <Name>LOC_BS_MOD_NAME</Name>
     <Description>LOC_BS_MOD_DESCRIPTION</Description>
@@ -14,6 +14,22 @@
     <Criteria id="GS">
       <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
     </Criteria>
+    <Criteria id="GS_DetailedMapTacks">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>4ecfcc62-5471-4435-b295-590df213e8d8</ModInUse>
+    </Criteria>
+    <Criteria id="GS_MapSearchExtension">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>81423aeb-17fa-4b7b-ab73-0a25bfcb0e8c</ModInUse>
+    </Criteria>
+    <Criteria id="GS_Harmony">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>521b8777-0977-4859-a5ee-3e411a732e5c</ModInUse>
+    </Criteria>
+    <Criteria id="GS_BetterReportScreen">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ModInUse>6f2888d4-79dc-415f-a8ff-f9d81d7afb53</ModInUse>
+    </Criteria>
   </ActionCriteria>
   <LocalizedText>
     <Text id="LOC_BS_MOD_NAME">
@@ -21,8 +37,8 @@
       <zh_Hans_CN>自由造桥</zh_Hans_CN>
     </Text>
     <Text id="LOC_BS_MOD_DESCRIPTION">
-      <en_US>Build one-tile stone bridges and two- or three-tile sea bridges. Land units and traders use the ends; ships can pass through the water below. For Windows Steam Gathering Storm single-player, including Harmony in Diversity.</en_US>
-      <zh_Hans_CN>建造1格石桥和2至3格跨海大桥。陆军与商人从两端上下桥，船可穿过桥下。适用于 Windows Steam《风云变幻》单人游戏，可与《和而不同》搭配使用。</zh_Hans_CN>
+      <en_US>Build one-tile stone bridges and two- or three-tile sea bridges. Land units, ships and trade routes use standard game movement. For Windows Steam Gathering Storm single-player, including Harmony in Diversity.</en_US>
+      <zh_Hans_CN>建造1格石桥和2至3格跨海大桥。陆军、船只和商路均沿用游戏原版寻路。适用于 Windows Steam《风云变幻》单人游戏，可与《和而不同》搭配使用。</zh_Hans_CN>
     </Text>
   </LocalizedText>
   <InGameActions>
@@ -69,6 +85,12 @@
       <File>BridgeSpan_DistrictCommon.lua</File>
       <File>WorldInput_BridgeSpan.lua</File>
       <File>ProductionPanel_BridgeSpan.lua</File>
+      <File>MapPinPopup_BridgeSpan.lua</File>
+      <File>MapSearchPanel_BridgeSpan.lua</File>
+      <File>BS_VisibleBuildings.lua</File>
+      <File>BS_PlotTooltip.lua</File>
+      <File>BS_CityOverview.lua</File>
+      <File>BS_ReportScreen.lua</File>
       <File>BS_BridgeDistricts22.dds</File>
       <File>BS_BridgeDistricts32.dds</File>
       <File>BS_BridgeDistricts38.dds</File>
@@ -84,12 +106,49 @@
         <LuaReplace>WorldInput_BridgeSpan.lua</LuaReplace>
       </Properties>
     </ReplaceUIScript>
+    <!-- A third-party popup wins over the base adapter. Chain the known DMT
+         popup immediately after its own replacement at load order 12345. -->
+    <ReplaceUIScript id="BS_MapPinPopup" criteria="GS">
+      <Properties>
+        <LoadOrder>-1</LoadOrder>
+        <LuaContext>MapPinPopup</LuaContext>
+        <LuaReplace>MapPinPopup_BridgeSpan.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_DetailedMapTacksPopup" criteria="GS_DetailedMapTacks">
+      <Properties>
+        <LoadOrder>12346</LoadOrder>
+        <LuaContext>MapPinPopup</LuaContext>
+        <LuaReplace>MapPinPopup_BridgeSpan.lua</LuaReplace>
+      </Properties>
+    </ReplaceUIScript>
     <ReplaceUIScript id="BS_ProductionPanel" criteria="GS">
       <Properties>
         <LoadOrder>160000</LoadOrder>
         <LuaContext>ProductionPanel</LuaContext>
         <LuaReplace>ProductionPanel_BridgeSpan.lua</LuaReplace>
       </Properties>
+    </ReplaceUIScript>
+    <ImportFiles id="BS_MapSearchExtension" criteria="GS_MapSearchExtension">
+      <Properties>
+        <LoadOrder>14101</LoadOrder>
+      </Properties>
+      <File>MseQuickWonders.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="BS_PlotTooltip" criteria="GS">
+      <Properties><LoadOrder>1</LoadOrder><LuaContext>PlotToolTip</LuaContext><LuaReplace>BS_PlotTooltip.lua</LuaReplace></Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_CityOverview" criteria="GS">
+      <Properties><LoadOrder>1</LoadOrder><LuaContext>CityPanelOverview</LuaContext><LuaReplace>BS_CityOverview.lua</LuaReplace></Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_HDCityOverview" criteria="GS_Harmony">
+      <Properties><LoadOrder>150001</LoadOrder><LuaContext>CityPanelOverview</LuaContext><LuaReplace>BS_CityOverview.lua</LuaReplace></Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_ReportScreen" criteria="GS">
+      <Properties><LoadOrder>1</LoadOrder><LuaContext>ReportScreen</LuaContext><LuaReplace>BS_ReportScreen.lua</LuaReplace></Properties>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="BS_BetterReportScreen" criteria="GS_BetterReportScreen">
+      <Properties><LoadOrder>1021</LoadOrder><LuaContext>ReportScreen</LuaContext><LuaReplace>BS_ReportScreen.lua</LuaReplace></Properties>
     </ReplaceUIScript>
     <UpdateDatabase id="BS_Worksites" criteria="GS">
       <Properties>
@@ -103,25 +162,6 @@
       </Properties>
       <File>WorksiteIcons.sql</File>
     </UpdateIcons>
-    <AddGameplayScripts id="BS_HealthMonitor" criteria="GS">
-      <Properties>
-        <LoadOrder>40000</LoadOrder>
-      </Properties>
-      <File>BridgeSpan_HealthMonitor.lua</File>
-    </AddGameplayScripts>
-    <AddUserInterfaces id="BS_HealthUI" criteria="GS">
-      <Properties>
-        <Context>InGame</Context>
-        <LoadOrder>41000</LoadOrder>
-      </Properties>
-      <File>BridgeSpan_HealthUI.xml</File>
-    </AddUserInterfaces>
-    <ImportFiles id="BS_HealthUIFiles" criteria="GS">
-      <File>BridgeSpan_HealthUI.lua</File>
-    </ImportFiles>
-    <UpdateText id="BS_HealthText">
-      <File>HealthText.xml</File>
-    </UpdateText>
     <AddUserInterfaces id="BS_PlacementPicker" criteria="GS">
       <Properties>
         <Context>InGame</Context>
@@ -150,19 +190,18 @@
     <File>Icons.sql</File>
     <File>LICENSE.txt</File>
     <File>ProductionPanel_BridgeSpan.lua</File>
+    <File>MapPinPopup_BridgeSpan.lua</File>
+    <File>MapSearchPanel_BridgeSpan.lua</File>
+    <File>MseQuickWonders.lua</File>
+    <File>BS_VisibleBuildings.lua</File>
+    <File>BS_PlotTooltip.lua</File>
+    <File>BS_CityOverview.lua</File>
+    <File>BS_ReportScreen.lua</File>
     <File>Text.xml</File>
     <File>Unlock.sql</File>
     <File>WorldInput_BridgeSpan.lua</File>
     <File>Worksites.sql</File>
     <File>WorksiteIcons.sql</File>
-    <File>CoreConfig.sql</File>
-    <File>Binaries/Win64/GameCore_XP2_BridgeSpan_FinalRelease.dll</File>
-    <File>Core-THIRD_PARTY_NOTICES.txt</File>
-    <File>Core-MINHOOK-LICENSE.txt</File>
-    <File>BridgeSpan_HealthMonitor.lua</File>
-    <File>BridgeSpan_HealthUI.lua</File>
-    <File>BridgeSpan_HealthUI.xml</File>
-    <File>HealthText.xml</File>
     <File>BridgeSpan_PlacementPicker.lua</File>
     <File>BridgeSpan_PlacementPicker.xml</File>
     <File>Platforms/Windows/BLPs/BS_BridgeTiles.blp</File>
@@ -201,12 +240,4 @@
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_DiffuseTint_BS_Damage_3_D_null</File>
     <File>Platforms/Windows/BLPs/SHARED_DATA/TEXTURE_ProceduralNoiseTexture2D_0x304656c5</File>
   </Files>
-  <FrontEndActions>
-    <UpdateDatabase id="BS_CoreConfig">
-      <Properties>
-        <LoadOrder>100</LoadOrder>
-      </Properties>
-      <File>CoreConfig.sql</File>
-    </UpdateDatabase>
-  </FrontEndActions>
 </Mod>

@@ -1,4 +1,4 @@
-"""Behavioral Lua publication checks using the independent placement fixture.
+"""Gameplay damage and city-transfer checks using the independent placement fixture.
 
 These are mocked gameplay tests; native path/movement acceptance is separate.
 """
@@ -11,13 +11,9 @@ repo = root.parent
 fixture = (root / 'fixtures/placement.lua').read_text(encoding='utf-8')
 fixture = fixture.replace('Technologies={BRIDGE_TECH={Index=1}}',
                           'Technologies={BRIDGE_TECH={Index=1},TECH_SHIPBUILDING={Index=2}}')
-fixture = fixture.replace('"CityRemovedFromMap","PlayerTurnActivated"',
-                          '"CityRemovedFromMap","CityTransfered","PlayerTurnActivated"')
 needle = '    assert(start.owner==-1 and finish.purchaseCity==bankCity,"bank ownership changed");'
 assert fixture.count(needle) == 1
 cases = r'''
-    local intact=axes;
-    local originalIsPillaged=buildings.IsPillaged;
     -- Native building pillage is the first target on a bridge tile. One event
     -- must exhaust both targets, while a district repair rebuilds the component.
     for segment,index in ipairs(plan.Plots) do
@@ -38,30 +34,7 @@ cases = r'''
         Events.LoadGameViewStateDone.Fire();
         assert(deck:IsPillaged(),"old damage was not restored");
         byIndex[plan.Anchor]:SetPillaged(false);
-        assert(axes==intact,"damage/repair changed endpoint restrictions");
     end
-    for segment,index in ipairs(plan.Plots) do
-        local deck=byIndex[index];
-        deck.IsPillaged=function() return true; end;
-        Events.DistrictPillaged.Fire(0,segment,7,deck.x,deck.y,deck.district);
-        assert(axes~=intact,"broken deck still exposes intact edges");
-        Events.LoadGameViewStateDone.Fire();
-        assert(axes~=intact,"damaged save reload reopened bridge");
-        deck.IsPillaged=function() return false; end;
-        local marker=GameInfo.Buildings[B.Marker(plan,segment,plan.Slot)].Index;
-        buildings.IsPillaged=function(_,id) return id==marker; end;
-        Events.PlayerTurnActivated.Fire(0);
-        assert(axes~=intact,"marker pillage reopened bridge");
-        buildings.IsPillaged=function() return false; end;
-        local oldLocation=locations[marker]; locations[marker]=nil;
-        Events.PlayerTurnActivated.Fire(0);
-        assert(axes~=intact,"missing marker reopened bridge");
-        locations[marker]=oldLocation;
-        Events.PlayerTurnActivated.Fire(0);
-        byIndex[plan.Anchor]:SetPillaged(false);
-        assert(axes==intact,"repair failed to restore restrictions");
-    end
-    buildings.IsPillaged=originalIsPillaged;
     local oldOwner=city.GetOwner;
     local previousProperties=properties;
     properties={}; -- real engine replaces the city object without Lua properties
@@ -73,7 +46,6 @@ cases = r'''
     Events.CityAddedToMap.Fire(1,7);
     Events.DistrictAddedToMap.Fire(1,1,7,anchor.x,anchor.y,anchor.district);
     Events.CityTransfered.Fire(1,7,0,0);
-    assert(axes==intact,"city transfer dropped bridge restrictions");
     local adopted=assert(B.Records(city)[tostring(anchor.index)]);
     assert(adopted.Owner==1 and adopted.CityID==7 and adopted.Complete);
     assert(anchor.district==B.District(plan,1).Index,"transfer destroyed existing bridge");
@@ -90,27 +62,27 @@ cases = r'''
     Events.DistrictAddedToMap.Fire(0,9,7,0,3,second.district);
     local secondPlan=assert(B.Records(city)[tostring(second.index)]);
     assert(secondPlan.Complete);
-    local function rowCount() local n=0; for row in axes:gmatch("[^;]+") do n=n+1 end; return n end;
-    assert(rowCount()==4,"second bridge not published");
+    local secondMarker=GameInfo.Buildings[B.Marker(secondPlan,1,secondPlan.Slot)].Index;
+    assert(locations[secondMarker]==second.index and secondPlan.Slot~=plan.Slot);
     local middle=byIndex[plan.Plots[2]];
     local oldType=middle.district; middle.district=-1;
     Events.DistrictRemovedFromMap.Fire(0,2,7,middle.x,middle.y,oldType);
-    assert(rowCount()==3,"partial removal must keep only existing decks and other bridge");
-    assert(not axes:find(middle.x..","..middle.y..",",1,true) or middle.x==0,
-        "removed middle deck still published");
+    local middleMarker=GameInfo.Buildings[B.Marker(plan,2,plan.Slot)].Index;
+    locations[middleMarker]=nil;
+    Events.LoadGameViewStateDone.Fire();
+    assert(not buildings:HasBuilding(middleMarker),"missing support regained a crossing component");
+    assert(locations[secondMarker]==second.index);
     middle.district=oldType;
-    Events.PlayerTurnActivated.Fire(0);
-    assert(rowCount()==4,"restored support failed to republish");
+    Events.LoadGameViewStateDone.Fire();
+    assert(locations[middleMarker]==middle.index);
     local rootType=anchor.district; anchor.district=-1;
     Events.DistrictRemovedFromMap.Fire(0,1,7,anchor.x,anchor.y,rootType);
-    assert(rowCount()==1,"root removal leaves stale restrictions or drops other bridge");
+    assert(byIndex[plan.Plots[2]].district==-1 and byIndex[plan.Plots[3]].district==-1);
+    assert(second.district==B.District(secondPlan,1).Index and locations[secondMarker]==second.index);
     assert(not B.Records(city)[tostring(anchor.index)],"removed root still reserves span");
     assert(B.Records(city)[tostring(second.index)]==secondPlan,"other bridge record lost");
     print("PASS: damage/markers/reload/transfer/partial removal/root cleanup/multiple bridges",directional);
 '''
-# Verify exact row starts rather than substring matches on neighbours.
-cases = cases.replace('    assert(not axes:find(middle.x..","..middle.y..",",1,true) or middle.x==0,\n        "removed middle deck still published");',
-    '    for row in axes:gmatch("[^;]+") do assert(not row:match("^"..middle.x..","..middle.y..","),"removed deck still published") end;')
 output = root / 'build/test_damage.lua'
 output.write_text(fixture.replace(needle, needle + cases), encoding='utf-8')
 result = subprocess.run(['node',str(repo/'node_modules/fengari-node-cli/src/lua-cli.js'),

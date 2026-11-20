@@ -43,37 +43,6 @@ local function SegmentAt(city,plan,segment)
         or plot:GetDistrictType()~=B.District(plan,segment).Index then return; end
     return plot,district,GameInfo.Buildings[B.Marker(plan,segment,plan.Slot or 1)];
 end
-local function PublishBridgeAxes()
-    if busy or GameConfiguration.IsAnyMultiplayer() then return; end
-    local rows={};
-    for _,player in ipairs(PlayerManager.GetAlive()) do
-        for _,city in player:GetCities():Members() do
-            for _,plan in pairs(B.Records(city)) do
-                Remember(city,plan);
-                if plan.Complete and plan.Start and plan.Finish then
-                    for segment,index in ipairs(plan.Plots) do
-                        local plot=Map.GetPlotByIndex(index);
-                        local previous=Map.GetPlotByIndex(plan.Plots[segment-1] or plan.Start);
-                        local nextPlot=Map.GetPlotByIndex(plan.Plots[segment+1] or plan.Finish);
-                        local district=plot and CityManager.GetDistrictAt(plot);
-                        -- Two self references mark a closed deck for the movement rules.
-                        if plan.Pillaged then previous=plot; nextPlot=plot; end
-                        if previous and nextPlot and B.BelongsToCity(plot,city)
-                            and plot:IsWater() and district and district:IsComplete()
-                            and plot:GetDistrictType()==B.District(plan,segment).Index then
-                            rows[#rows+1]=table.concat({
-                                plot:GetX(),plot:GetY(),previous:GetX(),previous:GetY(),nextPlot:GetX(),nextPlot:GetY()
-                            },",");
-                        end
-                    end
-                end
-            end
-        end
-    end
-    table.sort(rows);
-    Game.SetProperty("BS_NativeBridgeAxis_v1",table.concat(rows,";"));
-end
-
 -- Only a real pillage awards loot. Setting the sibling districts' flags and
 -- removing their crossing components changes map state without a unit action.
 local function SetBridgeDamage(city,plan,pillaged,reload)
@@ -103,7 +72,6 @@ local function SetBridgeDamage(city,plan,pillaged,reload)
             current.Pillaged=pillaged;
             city:SetProperty(B.Key,records);
             Remember(city,current);
-            if not reload then PublishBridgeAxes(); end
         end
         return repaired;
     end);
@@ -307,7 +275,6 @@ local function Added(owner,districtID,cityID,x,y,districtType)
     local anchorIndex=anchor:GetIndex();
     local key=tostring(anchorIndex);
     busy=true;
-    local completed=false;
     local ok,err=pcall(function()
         local records=B.Records(city);
         local plan=records[key];
@@ -345,6 +312,7 @@ local function Added(owner,districtID,cityID,x,y,districtType)
             -- The saved plan reserves this bridge's span until the root is complete.
             if not AttachSupports(city,plan) then
                 records[key]=nil;
+                knownPlans[key]=nil;
                 city:SetProperty(B.Key,records);
                 local district=CityManager.GetDistrictAt(anchor);
                 if district then CityManager.DestroyDistrict(district); end
@@ -356,13 +324,11 @@ local function Added(owner,districtID,cityID,x,y,districtType)
             city:SetProperty(B.Key,records);
             Remember(city,plan);
             UpgradeTiles(city,plan);
-            completed=true;
             print("[BridgeSpanDistrict] Completed",owner,cityID,span,plan.Direction,anchorIndex,plan.Slot or 1);
         end
     end);
     busy=false;
     if not ok then print("[BridgeSpanDistrict] ERROR",tostring(err)); end
-    if completed then PublishBridgeAxes(); end
 end
 
 local function Removed(owner,districtID,cityID,x,y,districtType)
@@ -373,11 +339,16 @@ local function Removed(owner,districtID,cityID,x,y,districtType)
     -- Transfer emits removal for the old city while the same district already
     -- belongs to its new owner. This is not demolition.
     if anchor and anchor:GetDistrictType()==districtType then return; end
-    if anchor then knownPlans[tostring(anchor:GetIndex())]=nil; end
-    if not city or not anchor then return; end
-    local records=B.Records(city);
+    if not anchor then return; end
     local key=tostring(anchor:GetIndex());
-    local plan=records[key];
+    local records=city and B.Records(city);
+    local plan=records and records[key];
+    -- Upgrading a legacy root replaces it on the same plot. The engine may
+    -- deliver its removal after the replacement has already been completed.
+    local previous=plan or knownPlans[key];
+    if previous and districtType==GameInfo.Districts["DISTRICT_BS_BRIDGE_"..previous.Span].Index
+        and anchor:GetDistrictType()==B.PlacementDistrict(previous).Index then return; end
+    knownPlans[key]=nil;
     if not plan then return; end
     records[key]=nil;
     city:SetProperty(B.Key,records);
@@ -413,6 +384,7 @@ local function RestoreOnLoad()
     for _,player in ipairs(PlayerManager.GetAlive()) do
         for _,city in player:GetCities():Members() do
             for _,plan in pairs(B.Records(city)) do
+                Remember(city,plan);
                 if plan.Complete then
                     local ok,result=pcall(RestoreBridge,city,plan);
                     if ok then
@@ -425,14 +397,12 @@ local function RestoreOnLoad()
         end
     end
     if restored>0 then print("[BridgeSpanDistrict] Restored bridge crossing after load",restored); end
-    PublishBridgeAxes();
 end
 
 local function CityAdded(owner,cityID)
     local player=Players[owner];
     local city=player and player:GetCities():FindID(cityID);
     if city then AdoptExisting(city); end
-    if next(knownPlans) then PublishBridgeAxes(); end
 end
 
 local function Transferred(owner,cityID)
@@ -447,24 +417,14 @@ local function Transferred(owner,cityID)
             end
         end
     end
-    PublishBridgeAxes();
 end
 
 Events.DistrictAddedToMap.Add(Added);
 Events.DistrictBuildProgressChanged.Add(Added);
 Events.DistrictRemovedFromMap.Add(Removed);
-Events.DistrictRemovedFromMap.Add(PublishBridgeAxes);
 Events.LoadGameViewStateDone.Add(RestoreOnLoad);
 Events.DistrictPillaged.Add(DistrictDamageChanged);
 GameEvents.BuildingPillageStateChanged.Add(BuildingDamageChanged);
 Events.CityAddedToMap.Add(CityAdded);
 Events.CityTransfered.Add(Transferred);
-Events.CityRemovedFromMap.Add(PublishBridgeAxes);
--- District and transfer events publish structural changes immediately. Keep a
--- reconciliation pass on the human turn for ownership changes from other mods.
--- A fresh map with no bridge records has nothing to reconcile.
-Events.PlayerTurnActivated.Add(function(owner)
-    local player=Players[owner];
-    if next(knownPlans) and player and player:IsHuman() then PublishBridgeAxes(); end
-end);
 print("[BridgeSpanDistrict] Multiple city bridges enabled");

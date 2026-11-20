@@ -42,7 +42,32 @@ GameConfiguration.GetValue=function() return false end;
 Locale={Lookup=function(key) return key end};
 local baseItems={item(1),item(2),item(3)};
 GetData=function() return {City=city,DistrictItems=baseItems} end;
+local nativePurchaseCalls=0;
+local treasury={};
+ComposeDistrictForPurchase=function(row,selected,yield,source,reason)
+    assert(row.DistrictType=="DISTRICT_CANAL" and selected==city and source==treasury and reason=="cost");
+    nativePurchaseCalls=nativePurchaseCalls+1;
+    return true,yield;
+end;
 include("ProductionPanel_BridgeSpan");
+for _,yield in ipairs({"YIELD_GOLD","YIELD_FAITH"}) do
+    local function excluded(name)
+        local allowed,entry=ComposeDistrictForPurchase({DistrictType=name},city,yield,treasury,"cost");
+        assert(not allowed and not entry,name);
+    end
+    for n=1,3 do
+        excluded("DISTRICT_BS_BRIDGE_"..n);
+        if n>1 then excluded("DISTRICT_BS_SUPPORT_"..n) end
+        for d=0,5 do
+            excluded("DISTRICT_BS_BRIDGE_"..n.."_D"..d);
+            for tile=2,n do excluded(B.SupportName(n,d,tile));end
+        end
+    end
+    local allowed,entry=ComposeDistrictForPurchase({DistrictType="DISTRICT_CANAL"},city,yield,treasury,"cost");
+    assert(allowed and entry==yield);
+end
+assert(nativePurchaseCalls==2);
+print("PASS: all bridge and support purchases excluded; ordinary gold and faith purchases retained");
 local data=GetData();
 assert(#data.DistrictItems==2,"sea entries no longer grouped");
 for _,it in ipairs(data.DistrictItems) do

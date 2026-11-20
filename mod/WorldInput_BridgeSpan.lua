@@ -1,4 +1,8 @@
-include("WorldInput");
+if Modding.IsModActive("521b8777-0977-4859-a5ee-3e411a732e5c") then
+    include("HD_WorldInput");
+else
+    include("WorldInput_Expansion2");
+end
 include("BridgeSpan_DistrictCommon");
 local B=BridgeSpanDistrict;
 local baseConfirm=ConfirmPlaceDistrict;
@@ -162,6 +166,15 @@ local function confirm(city,span)
     popup:Open();
 end
 function ConfirmPlaceDistrict(input)
+    local currency=UI.GetInterfaceModeParameter(CityCommandTypes.PARAM_YIELD_TYPE);
+    if currency==YieldTypes.GOLD or currency==YieldTypes.FAITH then
+        local hash=UI.GetInterfaceModeParameter(CityOperationTypes.PARAM_DISTRICT_TYPE);
+        if B.IsBridgeDistrict(GameInfo.Districts[hash]) then
+            ExitPlacementMode(true);
+            return;
+        end
+        return baseConfirm(input);
+    end
     local city,n=selection();if not n or not city then return baseConfirm(input);end
     if preview then return;end
     RealizePlotArtForDistrictPlacement();

@@ -12,6 +12,8 @@ def verify():
   assert hashlib.sha256(p.read_bytes()).hexdigest()==digest,f'Hash mismatch: {name}'
  mod=ET.parse(folder/'BridgeSpan.modinfo').getroot()
  assert mod.attrib['id']==manifest['modId'] and int(mod.attrib['version'])==manifest['version']
+ item=json.loads((ROOT/'workshop/item.json').read_text(encoding='utf8'))
+ assert item['id']==manifest['workshopItem'] and item['version']==manifest['version'], 'Workshop metadata differs from the release manifest'
  declared={x.text for x in mod.find('Files')}|{'BridgeSpan.modinfo'}
  assert declared==actual,f'Modinfo file list differs: {declared ^ actual}'
  print(f"Verified v{manifest['version']}: {len(files)} files, {sum((folder/n).stat().st_size for n in files):,} bytes")

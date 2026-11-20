@@ -70,8 +70,6 @@ Players={[0]={IsHuman=function() return true; end,IsTurnActive=function() return
     GetTechs=function() return {HasTech=function() return hasTech; end}; end}};
 PlayerManager={GetAlive=function() return {Players[0]}; end};
 Cities={GetPlotPurchaseCity=function(p) return p and p.purchaseCity; end};
-local axes;
-Game={SetProperty=function(_,value) axes=value; end};
 CityManager={GetDistrictAt=function(p) return p.district~=-1 and p or nil; end,
     DestroyDistrict=function(p) p.district=-1; end};
 local function key(x,y) return x..","..y; end
@@ -181,8 +179,13 @@ for _,directional in ipairs({false,true}) do
         local marker=GameInfo.Buildings[B.Marker(plan,i,plan.Slot)].Index;
         assert(locations[marker]==index);
     end
+    -- The engine has to reapply crossing components when it reloads a save.
+    locations={};
     Events.LoadGameViewStateDone.Fire();
-    assert(axes and #axes>0,"completed bridge lost native crossing after reload");
+    for i,index in ipairs(plan.Plots) do
+        local marker=GameInfo.Buildings[B.Marker(plan,i,plan.Slot)].Index;
+        assert(locations[marker]==index,"missing crossing component after reload");
+    end
     assert(start.owner==-1 and finish.purchaseCity==bankCity,"bank ownership changed");
 end
 print("PASS: legacy and directional construction, support attachment, markers and saved crossing restoration");

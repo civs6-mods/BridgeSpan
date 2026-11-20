@@ -20,14 +20,27 @@ BridgeSpanDistrict={Length=function(h)if h==1 or h==2 then return h end end,
  PlacementDistrict=function(p)return {Hash=100+p.Span*6+p.Direction,Index=p.Span,Name="Bridge"}end,
  Find=function()return legal end,SameClearance=function()return unchanged end};
 GameInfo={Features={},Improvements={}};
-include=function()end;
+local withHarmony=arg[2]=="harmony";
+local worldInputLoaded=false;
+Modding={IsModActive=function(id)
+    assert(id=="521b8777-0977-4859-a5ee-3e411a732e5c");
+    return withHarmony;
+end};
+include=function(name)
+    if name=="BridgeSpan_DistrictCommon" then return end
+    assert(not worldInputLoaded and name==(withHarmony and "HD_WorldInput" or "WorldInput_Expansion2"),
+        "bridge placement replaced the active adjacent-improvement handlers");
+    worldInputLoaded=true;
+end;
 ConfirmPlaceDistrict=function()calls.nativeConfirm=calls.nativeConfirm+1 end;
 RealizePlotArtForDistrictPlacement=function()calls.nativeArt=calls.nativeArt+1 end;
 RealizeCurrentPlaceDistrictOrWonderPlot=function()calls.nativeHover=calls.nativeHover+1 end;
 CityOperationTypes={PARAM_DISTRICT_TYPE="district",PARAM_X="x",PARAM_Y="y",BUILD="build"};
 CityOperationResults={SUCCESS_CONDITIONS="warnings"};
+CityCommandTypes={PARAM_YIELD_TYPE="yield"};YieldTypes={GOLD=2,FAITH=5};
+local currency;
 InterfaceModeTypes={DISTRICT_PLACEMENT=1};CursorTypes={RANGE_ATTACK=1};
-UI={GetInterfaceModeParameter=function()return hash end,GetHeadSelectedCity=function()return currentCity end,
+UI={GetInterfaceModeParameter=function(key)if key=="yield" then return currency end return hash end,GetHeadSelectedCity=function()return currentCity end,
  GetInterfaceMode=function()return mode end,GetCursorPlotID=function()return cursor end,PlaySound=function()end};
 UIManager={SetUICursor=function()end};
 UILens={CreateLensLayerHash=function()return 1 end,SetActive=function()end,
@@ -67,6 +80,7 @@ local function waterOnly()
  for _,i in ipairs(shadows)do assert(i<1000,"land bank revealed")end
 end
 dofile(source);
+assert(worldInputLoaded,"missing ruleset input script");
 RealizePlotArtForDistrictPlacement();waterOnly();equalsSet(painted,{10,30},"clickable anchors");
 RealizeCurrentPlaceDistrictOrWonderPlot();equalsSet(focused,{10},"ambiguous hover");
 local baseline={};for k,v in pairs(calls)do baseline[k]=v end
@@ -115,3 +129,14 @@ RealizePlotArtForDistrictPlacement();ConfirmPlaceDistrict();
 assert(calls.nativeArt==1 and calls.nativeHover==1 and calls.nativeConfirm==1,"stock canal/wonder fallback changed");
 print("PASS: one-tile choice, single-option shortcut, clearance warnings, exit cleanup and stock fallback");
 print("HOVER_REGRESSION_PASS");
+GameInfo.Districts={[1]={DistrictType="DISTRICT_BS_BRIDGE_1"},[99]={DistrictType="DISTRICT_CAMPUS"}};
+BridgeSpanDistrict.IsBridgeDistrict=function(row)return row==GameInfo.Districts[1] end;
+local before=requested;
+for _,yield in ipairs({YieldTypes.GOLD,YieldTypes.FAITH}) do
+    currency=yield;mode=1;hash=1;popup=nil;
+    local native=calls.nativeConfirm;
+    ConfirmPlaceDistrict({});
+    assert(mode==0 and requested==before and not popup and not picker and calls.nativeConfirm==native);
+    mode=1;hash=99;ConfirmPlaceDistrict({});assert(calls.nativeConfirm==native+1);
+end
+print("PASS: stale bridge purchase cancelled and native district purchase forwarded for both currencies");

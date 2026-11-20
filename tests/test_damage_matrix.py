@@ -15,7 +15,15 @@ for _,directional in ipairs({false,true})do for span=1,3 do for direction=0,5 do
     local plan=assert(B.Records(city)[tostring(anchor.index)]);
     assert(plan.Complete);
     for _,index in ipairs(plan.Plots)do byIndex[index].complete=true;end
-    Events.LoadGameViewStateDone.Fire();local originalAxes=axes;
+    Events.LoadGameViewStateDone.Fire();
+    if not directional then
+        local original=GameInfo.Districts["DISTRICT_BS_BRIDGE_"..span].Index;
+        Events.DistrictRemovedFromMap.Fire(0,1,7,anchor.x,anchor.y,original);
+        assert(B.Records(city)[tostring(anchor.index)],"late legacy removal erased the upgraded bridge");
+        for i,index in ipairs(plan.Plots) do
+            assert(byIndex[index].district==B.District(B.Records(city)[tostring(anchor.index)],i).Index);
+        end
+    end
     for mask=1,2^span-1 do
         for segment,index in ipairs(plan.Plots)do
             if math.floor(mask/2^(segment-1))%2==1 then
@@ -34,10 +42,9 @@ for _,directional in ipairs({false,true})do for span=1,3 do for direction=0,5 do
                 else assert(locations[marker]==index) end
             end
         end
-        check(true); assert(axes~=originalAxes,"broken bridge left open in pathfinding");
+        check(true);
         Events.LoadGameViewStateDone.Fire(); check(true);
         byIndex[plan.Anchor]:SetPillaged(false); check(false);
-        assert(axes==originalAxes,"damage/repair changed bridge entry restrictions");
         cases=cases+1;
     end
 end end end
@@ -58,6 +65,24 @@ for _,i in ipairs(a.Plots)do assert(byIndex[i]:IsPillaged(),"repair leaked to th
 for _,i in ipairs(b.Plots)do assert(not byIndex[i]:IsPillaged()) end
 byIndex[a.Anchor]:SetPillaged(false);
 for _,i in ipairs(a.Plots)do assert(not byIndex[i]:IsPillaged()) end
+-- A saved, already-upgraded bridge must survive transfer even when it has
+-- never received a construction or damage event in this session.
+local bankA=plot(-1,8,false); local fresh=plot(0,8,true); local bankB=plot(1,8,false);
+fresh.district=GameInfo.Districts.DISTRICT_BS_BRIDGE_1_D1.Index; fresh.complete=true;
+local saved={Owner=0,CityID=7,Anchor=fresh.index,Start=bankA.index,Finish=bankB.index,
+    Plots={fresh.index},Span=1,Direction=1,Root="DISTRICT_BS_BRIDGE_1_D1",
+    Slot=1,TileArt=true,Complete=true,Pillaged=false};
+locations={};
+properties={[B.Key]={[tostring(fresh.index)]=saved}};
+Events.LoadGameViewStateDone.Fire();
+local marker=GameInfo.Buildings.BUILDING_BS_TILE_1_S1.Index;
+assert(locations[marker]==fresh.index);
+properties={};
+city.GetOwner=function() return 1; end;
+fresh.owner=1; Players[1]=Players[0];
+Events.CityTransfered.Fire(1,7,0,0);
+local transferred=assert(B.Records(city)[tostring(fresh.index)]);
+assert(transferred.Owner==1 and transferred.Slot==1 and locations[marker]==fresh.index);
 print("DAMAGE_MATRIX_PASS: 132 damaged subsets, both district generations, six directions, reload, whole repair, two same-type bridges repaired separately");
 '''
 out=root/'build/damage-matrix.lua';out.write_text(fixture+cases)

@@ -6,6 +6,9 @@ B.LegacyPendingKey="BS_DistrictBridgePlan_v1";
 function B.PendingKey(anchor)
     return "BS_DistrictBridgePlan_v2:"..anchor;
 end
+function B.IsBridgeDistrict(row)
+    return row and row.DistrictType:match("^DISTRICT_BS_")~=nil;
+end
 function B.Length(districtType)
     local row=GameInfo.Districts[districtType];
     if not row then return; end

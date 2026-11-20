@@ -10,11 +10,13 @@ Build bridges across coast and lake tiles in Civilization VI. Land units and tra
 
 ## Current release
 
-**v44 is tested and awaiting Workshop publication.** The repository's `mod/` contains the verified v44 candidate. [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3838759919) remains on v43: Steam rejected the upload with `k_EResultInsufficientPrivilege` on 2026-11-17.
+[Download BridgeSpan v51 for manual installation](https://github.com/civs6-mods/BridgeSpan/releases/download/v51/BridgeSpan-v51.zip) · [All mod releases](https://github.com/civs6-mods/BridgeSpan/releases)
+
+**v51 was released on November 20, 2026.** It fixes improvement placement, bridge entries in map tacks and search, and the display of internal bridge components in city details and reports.
 
 - One-tile stone bridges and two-/three-tile sea bridges, built through city production. A city can build multiple bridges.
-- Land units and traders enter and leave at the two ends. Ships can cross the bridge's water tiles.
-- Pillage damages only the occupied segment and updates its appearance. A city repair project restores every damaged segment of the selected bridge.
+- The game chooses paths for land units, ships and traders, including entry, exit and embarkation at the side of a bridge.
+- Pillaging any segment damages the entire bridge and removes its crossing components. Standard movement still applies. In testing, a Warrior walked onto a damaged bridge tile and a Galley sailed into the middle tile. City production repairs one bridge per district repair order, like a Canal. Each bridge in the same city has its own condition. When upgrading a Workshop v43 save, a partially damaged bridge becomes damaged along its full span.
 - Multiple valid layouts use numbered options with bridge and A/B shore previews; a single valid layout goes straight to confirmation.
 - Eligible feature and improvement removal is shown before construction. Cancelling leaves them intact.
 - Supports the Windows Steam edition of Civilization VI, Gathering Storm, single-player, including Harmony in Diversity. See the [verification record](docs/VERIFICATION.md) for DX11/DX12 coverage.
@@ -25,7 +27,7 @@ Names, descriptions, in-game controls and messages support Simplified Chinese an
 
 Subscribe on Steam Workshop, wait for the download to finish, and enable BridgeSpan in Additional Content. No external launcher is required.
 
-For manual installation, exit the game and copy the repository's `mod` folder into `Documents/My Games/Sid Meier's Civilization VI/Mods`, naming the copied folder `BridgeSpan`, then enable it. Use one installation method: the local copy and Workshop subscription share the same mod ID.
+For manual installation, exit the game and extract the release ZIP into `Documents/My Games/Sid Meier's Civilization VI/Mods`. Check that `Mods/BridgeSpan/BridgeSpan.modinfo` exists, then enable BridgeSpan in Additional Content. For an upgrade, replace the entire previous mod folder. Use one installation method: the local copy and Workshop subscription share the same mod ID.
 
 Stone bridges require **Engineering** in the standard technology tree, or **Arch** with Harmony in Diversity. Sea bridges require **Steel**. Both types also require **Shipbuilding**. Select a bridge in city production, choose a valid water tile, and confirm the layout, cost and removal warnings.
 
@@ -35,13 +37,13 @@ The bridge must cross consecutive coast or lake tiles belonging to the same prod
 
 | Path | Contents |
 | --- | --- |
-| `mod/` | Complete v44 installable package: Lua, SQL, UI, compiled art and native module |
+| `mod/` | Complete v51 installable package: Lua, SQL, UI, and compiled art |
 | `art/damage/` | Editable damaged Blender models, build scripts and resource templates for all three spans |
-| `native/` | Native C/C++ sources, MinHook sources and build entry point |
-| `tests/` | Offline placement, picker, clearance, technology, damage and health regressions |
+| `native/` | Historical game-core sources for v46 and earlier |
+| `tests/` | Offline placement, picker, clearance, technology, damage and repair regressions |
 | `scripts/` | Package verification, offline tests and ZIP packaging |
 | `workshop/` | English, Simplified Chinese and combined descriptions, cover, screenshots and gallery order |
-| `release-manifest.json` | SHA-256 hashes for the 93 v44 release files |
+| `release-manifest.json` | SHA-256 hashes for the 66 v51 release files |
 
 Quick verification and packaging:
 
@@ -52,7 +54,7 @@ python scripts/test.py
 python scripts/package.py
 ```
 
-The ZIP is written to `dist/BridgeSpan-v44.zip`. Native build requirements and commands are in the [development guide](docs/DEVELOPMENT.md).
+The ZIP is written to `dist/BridgeSpan-v51.zip`. See the [development guide](docs/DEVELOPMENT.md).
 
 ## Diagnostics
 
@@ -68,4 +70,4 @@ Read the [development and packaging guide](docs/DEVELOPMENT.md) before starting.
 
 For bug reports, include screenshots, reproduction steps and enabled mods. A save from before the issue helps.
 
-Project code is [MIT licensed](LICENSE). MinHook retains its own license and attribution; see [third-party notices](native/THIRD_PARTY_NOTICES.txt). No original game DLL is redistributed; the native module loads the locally installed game at runtime.
+Project code is [MIT licensed](LICENSE). MinHook retains its own license and attribution; see [third-party notices](native/THIRD_PARTY_NOTICES.txt).
